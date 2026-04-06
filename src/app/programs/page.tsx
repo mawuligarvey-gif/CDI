@@ -1,0 +1,265 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { CheckCircle } from "lucide-react";
+import Link from "next/link";
+
+export default function Programs() {
+  const programs = [
+    {
+      id: 1,
+      title: "Leadership & Entrepreneurship Training",
+      icon: "🚀",
+      description: "Intensive program for aspiring entrepreneurs and leaders",
+      duration: "3-6 months",
+      benefits: [
+        "Business planning & strategy",
+        "Financial management",
+        "Digital marketing",
+        "Pitch training",
+        "Networking opportunities",
+      ],
+      format: "Hybrid (Online + In-Person Workshops)",
+      investment: "Free for qualified applicants",
+    },
+    {
+      id: 2,
+      title: "Cultural Diplomacy Internship",
+      icon: "🌐",
+      description: "International experience in cultural and diplomatic affairs",
+      duration: "6-12 months",
+      benefits: [
+        "Work with international organizations",
+        "Cultural exchange programs",
+        "Language opportunities",
+        "Global networking",
+        "Career development",
+      ],
+      format: "Placement-based + Mentoring",
+      investment: "Paid stipend provided",
+    },
+    {
+      id: 3,
+      title: "Mentorship Program",
+      icon: "🤝",
+      description: "One-on-one guidance from experienced industry leaders",
+      duration: "6 months - Ongoing",
+      benefits: [
+        "Personalized guidance",
+        "Goal setting & tracking",
+        "Career counseling",
+        "Industry connections",
+        "Skill development",
+      ],
+      format: "Individual Meetings + Group Events",
+      investment: "Free",
+    },
+    {
+      id: 4,
+      title: "Funding Opportunities",
+      icon: "💰",
+      description: "Grant and investment support for innovative ideas",
+      duration: "Ongoing applications",
+      benefits: [
+        "Startup grants up to ₵50,000",
+        "Investment connections",
+        "Business coaching",
+        "Incubation support",
+        "Growth mentorship",
+      ],
+      format: "Application-based",
+      investment: "Equity-free grants available",
+    },
+  ];
+
+  return (
+    <div className="pt-20">
+      {/* Hero */}
+      <section className="bg-gradient-to-r from-deep-blue to-deep-blue/80 text-white py-20 md:py-32">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-center"
+          >
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
+              Our <span className="text-gold">Programs</span>
+            </h1>
+            <p className="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto">
+              Comprehensive pathways designed to transform your potential into impact
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Programs Grid */}
+      <section className="py-20 md:py-32 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="space-y-12">
+            {programs.map((program, i) => (
+              <motion.div
+                key={program.id}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center"
+              >
+                <div className={i % 2 === 1 ? "lg:order-2" : ""}>
+                  <div className="text-4xl sm:text-6xl mb-4">{program.icon}</div>
+                  <h3 className="text-2xl sm:text-3xl font-bold text-deep-blue mb-4">
+                    {program.title}
+                  </h3>
+                  <p className="text-gray-600 mb-6 leading-relaxed">
+                    {program.description}
+                  </p>
+
+                  {/* Quick Info */}
+                  <div className="grid grid-cols-2 gap-4 mb-8">
+                    <div className="p-4 bg-gold/10 rounded-lg">
+                      <p className="text-gold font-bold text-sm">Duration</p>
+                      <p className="text-deep-blue font-semibold">
+                        {program.duration}
+                      </p>
+                    </div>
+                    <div className="p-4 bg-gold/10 rounded-lg">
+                      <p className="text-gold font-bold text-sm">Investment</p>
+                      <p className="text-deep-blue font-semibold">
+                        {program.investment}
+                      </p>
+                    </div>
+                  </div>
+
+                  <motion.a
+                    href="/apply"
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="inline-block px-8 py-4 bg-gold text-deep-blue rounded-lg font-bold hover:shadow-lg transition-all cursor-pointer"
+                  >
+                    Apply to This Program
+                  </motion.a>
+                </div>
+
+                <div className={i % 2 === 1 ? "lg:order-1" : ""}>
+                  {/* Benefits */}
+                  <div className="p-8 rounded-2xl bg-gradient-to-br from-gold/20 to-deep-blue/10 border border-gold/30">
+                    <h4 className="font-bold text-deep-blue mb-6">
+                      What You'll Get:
+                    </h4>
+                    <ul className="space-y-3">
+                      {program.benefits.map((benefit, j) => (
+                        <motion.li
+                          key={j}
+                          initial={{ opacity: 0, x: -20 }}
+                          whileInView={{ opacity: 1, x: 0 }}
+                          viewport={{ once: true }}
+                          transition={{ delay: j * 0.05 }}
+                          className="flex items-center gap-3"
+                        >
+                          <CheckCircle size={20} className="text-gold flex-shrink-0" />
+                          <span className="text-gray-700">{benefit}</span>
+                        </motion.li>
+                      ))}
+                    </ul>
+
+                    {/* Format */}
+                    <div className="mt-6 pt-6 border-t border-gold/30">
+                      <p className="text-gold font-bold text-sm mb-2">Format</p>
+                      <p className="text-gray-700">{program.format}</p>
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Eligibility & Application */}
+      <section className="py-20 md:py-32 bg-deep-blue text-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-3xl sm:text-4xl font-bold mb-6">
+                Who Can <span className="text-gold">Apply?</span>
+              </h2>
+              <ul className="space-y-4">
+                {[
+                  "Ages 18-35",
+                  "African residents or diaspora",
+                  "Passionate about leadership and impact",
+                  "Committed to community development",
+                  "Basic computer literacy",
+                  "English proficiency",
+                ].map((item, i) => (
+                  <motion.li
+                    key={i}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: i * 0.05 }}
+                    className="flex items-center gap-3"
+                  >
+                    <div className="w-2 h-2 bg-gold rounded-full"></div>
+                    <span>{item}</span>
+                  </motion.li>
+                ))}
+              </ul>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="p-8 rounded-2xl bg-gold/20 border border-gold/50"
+            >
+              <h3 className="text-2xl font-bold mb-4">Application Process</h3>
+              <ol className="space-y-4">
+                {[
+                  "Complete online application form",
+                  "Submit required documents",
+                  "Participate in phone screening",
+                  "Attend interview (if selected)",
+                  "Receive decision and onboarding",
+                ].map((step, i) => (
+                  <li key={i} className="flex gap-3">
+                    <div className="flex-shrink-0 w-8 h-8 rounded-full bg-deep-blue flex items-center justify-center font-bold text-sm">
+                      {i + 1}
+                    </div>
+                    <span>{step}</span>
+                  </li>
+                ))}
+              </ol>
+            </motion.div>
+          </div>
+
+          {/* CTA */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.5 }}
+            className="mt-12 text-center"
+          >
+            <Link href="/apply">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className="px-8 py-4 bg-gold text-deep-blue rounded-lg font-bold text-lg hover:shadow-gold transition-all"
+              >
+                Start Your Application
+              </motion.button>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
+    </div>
+  );
+}
