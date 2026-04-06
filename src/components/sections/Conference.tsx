@@ -97,7 +97,7 @@ export default function Conference() {
           >
             <div className="relative h-96 md:h-[450px] rounded-2xl overflow-hidden shadow-2xl">
               <Image
-                src="/images/gallery/CNM_1170.jpg"
+                src="/images/gallery/cmn_25.jpg"
                 alt="Cultural Diplomat Impact Conference"
                 fill
                 className="object-cover"
