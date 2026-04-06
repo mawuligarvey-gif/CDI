@@ -75,7 +75,7 @@ export default function About() {
               {/* Placeholder with gradient */}
              <div className="relative w-full h-full">
   <Image
-    src="/images/gallery/cmn_15.jpg"
+    src="/images/gallery/cmn_41.jpg"
     alt="Global Impact"
     fill
     className="object-cover rounded-2xl"
