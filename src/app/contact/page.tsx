@@ -24,20 +24,39 @@ export default function Contact() {
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
-    setTimeout(() => {
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+
+      if (result.success) {
+        setSubmitted(true);
+        setFormData({ name: "", email: "", subject: "", message: "" });
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        alert('Failed to send message. Please try again.');
+      }
+    } catch (error) {
+      console.error('Error:', error);
+      alert('Failed to send message. Please try again.');
+    } finally {
       setLoading(false);
-      setSubmitted(true);
-      setFormData({ name: "", email: "", subject: "", message: "" });
-      setTimeout(() => setSubmitted(false), 5000);
-    }, 1000);
+    }
   };
 
   const contactInfo = [
     {
       icon: Mail,
       label: "Email",
-      value: "info@cdio.org",
-      href: "mailto:info@cdio.org",
+      value: "theculturaldiplomats@gmail.com",
+      href: "mailto:theculturaldiplomats@gmail.com",
     },
     {
       icon: Phone,
@@ -212,17 +231,17 @@ export default function Contact() {
                   {
                     title: "For Program Inquiries",
                     desc: "Have questions about our programs? Contact our programs team.",
-                    email: "programs@cdio.org",
+                    email: "theculturaldiplomats@gmail.com",
                   },
                   {
                     title: "For Partnership Opportunities",
                     desc: "Interested in partnering with CDIO? Let's talk!",
-                    email: "partnerships@cdio.org",
+                    email: "theculturaldiplomats@gmail.com",
                   },
                   {
                     title: "For Media & Press",
                     desc: "Media inquiries and press releases",
-                    email: "media@cdio.org",
+                    email: "theculturaldiplomats@gmail.com",
                   },
                 ].map((item, i) => (
                   <motion.div

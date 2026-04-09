@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Instagram } from "lucide-react";
 
@@ -54,12 +55,23 @@ export default function Footer() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-2"
           >
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-10 h-10 bg-gold rounded-lg flex items-center justify-center">
-                <span className="text-deep-blue font-bold">CD</span>
-              </div>
-              <h3 className="font-bold text-xl text-gold">CDIO</h3>
-            </div>
+            <Link href="/">
+              <motion.div
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="flex items-center gap-3 mb-4 cursor-pointer hover:opacity-80 transition-opacity"
+              >
+                <Image
+                  src="/images/gallery/logo.png"
+                  alt="CDI Logo"
+                  width={50}
+                  height={50}
+                  className="h-auto"
+                />
+              </motion.div>
+            </Link>
             <p className="text-gray-200 mb-6 leading-relaxed">
               Raising leaders through faith, entrepreneurship, and education. Empowering the next generation of cultural leaders and innovators.
             </p>
@@ -115,11 +127,11 @@ export default function Footer() {
             <h4 className="font-bold text-gold mb-4">Contact</h4>
             <div className="space-y-3">
               <a
-                href="mailto:info@cdio.org"
+                href="mailto:theculturaldiplomats@gmail.com"
                 className="flex items-center gap-2 text-gray-200 hover:text-gold transition-colors"
               >
                 <Mail size={16} />
-                <span className="text-sm">info@cdio.org</span>
+                <span className="text-sm">theculturaldiplomats@gmail.com</span>
               </a>
               <a
                 href="tel:+233000000000"

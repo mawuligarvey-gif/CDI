@@ -140,7 +140,7 @@ export default function Team() {
               We're always looking for passionate individuals to join our mission
             </p>
             <motion.a
-              href="mailto:careers@cdio.org"
+              href="mailto:theculturaldiplomats@gmail.com"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="inline-block px-8 py-4 bg-gold text-deep-blue rounded-lg font-bold text-lg hover:shadow-lg transition-all cursor-pointer"
