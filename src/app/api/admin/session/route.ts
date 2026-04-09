@@ -9,10 +9,10 @@ export const runtime = "nodejs";
 
 export async function GET(request: NextRequest) {
   const cookie = request.cookies.get(getBlogAuthCookieName())?.value;
-  const authenticated = cookie === getBlogAuthToken();
+  const authenticated = cookie === (await getBlogAuthToken());
 
   return NextResponse.json({
     authenticated,
-    usingDefaultPassword: isUsingDefaultBlogPassword(),
+    usingDefaultPassword: await isUsingDefaultBlogPassword(),
   });
 }

@@ -13,7 +13,7 @@ export async function POST(request: NextRequest) {
     const body = await request.json();
     const password = String(body.password || "");
 
-    if (!isValidBlogPassword(password)) {
+    if (!(await isValidBlogPassword(password))) {
       return NextResponse.json(
         { error: "Incorrect password." },
         { status: 401 }
@@ -22,12 +22,12 @@ export async function POST(request: NextRequest) {
 
     const response = NextResponse.json({
       success: true,
-      usingDefaultPassword: isUsingDefaultBlogPassword(),
+      usingDefaultPassword: await isUsingDefaultBlogPassword(),
     });
 
     response.cookies.set({
       name: getBlogAuthCookieName(),
-      value: getBlogAuthToken(),
+      value: await getBlogAuthToken(),
       httpOnly: true,
       sameSite: "lax",
       secure: process.env.NODE_ENV === "production",

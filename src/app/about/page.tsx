@@ -32,6 +32,13 @@ export default function About() {
       objectPosition: "center 16%",
       bio: "A research-driven program leader who designs and executes high-impact initiatives, translating vision into scalable, results-oriented programs.",
     },
+    {
+      name: "Emmanuel Selormey",
+      role: "Head of Production",
+      image: "/images/team/emmanuel-selormey.png",
+      objectPosition: "center 15%",
+      bio: "A Ghanaian filmmaker, producer, and media entrepreneur specializing in visual storytelling, cinematography, and creative production.",
+    },
     
   ];
 
@@ -167,7 +174,7 @@ and influence the world through entrepreneurship, innovation, and faith.
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {team.map((member, i) => (
               <motion.div
                 key={i}

@@ -18,7 +18,7 @@ export async function GET() {
 
 export async function POST(request: NextRequest) {
   const authCookie = request.cookies.get(getBlogAuthCookieName())?.value;
-  if (!authCookie || authCookie !== getBlogAuthToken()) {
+  if (!authCookie || authCookie !== (await getBlogAuthToken())) {
     return NextResponse.json({ error: "Unauthorized." }, { status: 401 });
   }
 
