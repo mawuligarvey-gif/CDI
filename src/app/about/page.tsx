@@ -7,40 +7,32 @@ export default function About() {
   const team = [
     {
       name: "Kuukua Eshun",
-      role: "Founder",
-      image: "/images/team/dr-kwesi-mensah.jpg",
+      role: "Founder &  President",
+      image: "/images/team/kuukua-eshun.jpeg",
+      objectPosition: "center 20%",
       bio: "Award-winning filmmaker and cultural diplomat leading initiatives that empower African youth through mentorship, leadership, and entrepreneurship programs",
     },
     {
-      name: "Abena Agyeman",
-      role: "Director of Programs",
-      image: "/images/team/abena-agyeman.jpg",
-      bio: "Entrepreneurship expert with proven startup success",
+      name: "Christabel Badagbor",
+      role: " Head of Operations",
+      image: "/images/team/christabel-badagbor.jpeg",
+      bio: "A dynamic operations strategist and leader who drives the execution of impactful cultural and leadership initiatives.",
     },
     {
-      name: "Kofi Asiedu",
-      role: "Co-founder and Chairman",
-      image: "/images/team/kofi-asiedu.jpg",
-      bio: "International relations specialist and cultural diplomat",
+      name: "Nicolette Noi",
+      role: "Operations Coordinator",
+      image: "/images/team/nicolette-noi.jpeg",
+      objectPosition: "center 18%",
+      bio: "An administrative and operations professional supporting the planning and execution of cultural and leadership programs.",
     },
     {
-      name: "Ama Boateng",
-      role: "Head of Programs and Impact",
-      image: "/images/team/ama-boateng.jpg",
-      bio: "Youth development specialist and community leader",
+      name: "Emmanuel Vitashie",
+      role: "Head of Programs & Research",
+      image: "/images/team/emmanuel-vitashie.jpeg",
+      objectPosition: "center 16%",
+      bio: "A research-driven program leader who designs and executes high-impact initiatives, translating vision into scalable, results-oriented programs.",
     },
-    {
-      name: "Team Member Name",
-      role: "Creative Director and Head of Strategy",
-      image: "/images/team/team-member-5.jpg",
-      bio: "Add bio here",
-    },
-    {
-      name: "Team Member Name",
-      role: "Head of Production",
-      image: "/images/team/team-member-6.jpg",
-      bio: "Add bio here",
-    },
+    
   ];
 
   return (
@@ -193,6 +185,7 @@ and influence the world through entrepreneurship, innovation, and faith.
                     width={96}
                     height={96}
                     className="w-full h-full object-cover"
+                    style={{ objectPosition: member.objectPosition || "center" }}
                   />
                 </div>
                 <h4 className="font-bold text-deep-blue mb-1">{member.name}</h4>

@@ -133,7 +133,22 @@ Create a `.env.local` file if needed for any API integrations:
 
 ```
 NEXT_PUBLIC_API_URL=your_api_url
+BLOG_ADMIN_PASSWORD=choose-a-strong-password
 ```
+
+## ✍️ Client Blog Publishing (No-Code)
+
+Your client can publish blog posts directly from a built-in admin page.
+
+1. Start the site with `npm run dev`.
+2. Open `/admin/blog` in the browser.
+3. Log in with `BLOG_ADMIN_PASSWORD` from `.env.local`.
+4. Fill the form and click **Publish Post**.
+5. The post appears automatically on `/blog`.
+
+Notes:
+- Blog posts are stored in `src/data/blog-posts.json`.
+- If `BLOG_ADMIN_PASSWORD` is not set, a default password is used for development only. Set your own password before production.
 
 ## 📚 Project Structure
 

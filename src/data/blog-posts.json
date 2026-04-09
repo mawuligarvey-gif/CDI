@@ -1,0 +1,74 @@
+[
+  {
+    "id": 6,
+    "slug": "cultural-diplomacy-in-the-digital-age",
+    "title": "Cultural Diplomacy in the Digital Age",
+    "excerpt": "Navigating international relations in our increasingly connected world.",
+    "author": "Nana Owusu",
+    "date": "February 15, 2024",
+    "category": "Culture",
+    "image": "🌐",
+    "content": "Navigating international relations in our increasingly connected world.",
+    "createdAt": "2024-02-15T10:00:00.000Z"
+  },
+  {
+    "id": 5,
+    "slug": "mentorship-matters-building-meaningful-professional-relationships",
+    "title": "Mentorship Matters: Building Meaningful Professional Relationships",
+    "excerpt": "How to find the right mentor and maximize the mentorship experience.",
+    "author": "Zainab Mohammed",
+    "date": "February 20, 2024",
+    "category": "Mentorship",
+    "image": "👥",
+    "content": "How to find the right mentor and maximize the mentorship experience.",
+    "createdAt": "2024-02-20T10:00:00.000Z"
+  },
+  {
+    "id": 4,
+    "slug": "cdio-conference-2024-what-you-missed-and-what-s-next",
+    "title": "CDIO Conference 2024: What You Missed and What's Next",
+    "excerpt": "Highlights from our flagship event and announcements for the coming year.",
+    "author": "Ama Boateng",
+    "date": "February 28, 2024",
+    "category": "Events",
+    "image": "🎤",
+    "content": "Highlights from our flagship event and announcements for the coming year.",
+    "createdAt": "2024-02-28T10:00:00.000Z"
+  },
+  {
+    "id": 3,
+    "slug": "breaking-boundaries-the-role-of-faith-in-leadership",
+    "title": "Breaking Boundaries: The Role of Faith in Leadership",
+    "excerpt": "How faith-centered values can strengthen your leadership journey.",
+    "author": "Kofi Asiedu",
+    "date": "March 5, 2024",
+    "category": "Faith & Leadership",
+    "image": "⛪",
+    "content": "How faith-centered values can strengthen your leadership journey.",
+    "createdAt": "2024-03-05T10:00:00.000Z"
+  },
+  {
+    "id": 2,
+    "slug": "from-idea-to-impact-launching-your-first-social-enterprise",
+    "title": "From Idea to Impact: Launching Your First Social Enterprise",
+    "excerpt": "A step-by-step guide to turning your passion into a sustainable business.",
+    "author": "Abena Agyeman",
+    "date": "March 10, 2024",
+    "category": "Entrepreneurship",
+    "image": "🚀",
+    "content": "A step-by-step guide to turning your passion into a sustainable business.",
+    "createdAt": "2024-03-10T10:00:00.000Z"
+  },
+  {
+    "id": 1,
+    "slug": "5-essential-skills-every-young-leader-needs-in-2024",
+    "title": "5 Essential Skills Every Young Leader Needs in 2024",
+    "excerpt": "Discover the key competencies that will set you apart in the modern world.",
+    "author": "Dr. Kwesi Mensah",
+    "date": "March 15, 2024",
+    "category": "Leadership",
+    "image": "📰",
+    "content": "Discover the key competencies that will set you apart in the modern world.",
+    "createdAt": "2024-03-15T10:00:00.000Z"
+  }
+]

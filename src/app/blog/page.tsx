@@ -1,65 +1,38 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { Clock, User, ArrowRight } from "lucide-react";
 
+type BlogPost = {
+  id: number;
+  slug: string;
+  title: string;
+  excerpt: string;
+  author: string;
+  date: string;
+  category: string;
+  image: string;
+  content: string;
+  createdAt: string;
+};
+
 export default function Blog() {
-  const posts = [
-    {
-      id: 1,
-      title: "5 Essential Skills Every Young Leader Needs in 2024",
-      excerpt: "Discover the key competencies that will set you apart in the modern world.",
-      author: "Dr. Kwesi Mensah",
-      date: "March 15, 2024",
-      category: "Leadership",
-      image: "📰",
-    },
-    {
-      id: 2,
-      title: "From Idea to Impact: Launching Your First Social Enterprise",
-      excerpt: "A step-by-step guide to turning your passion into a sustainable business.",
-      author: "Abena Agyeman",
-      date: "March 10, 2024",
-      category: "Entrepreneurship",
-      image: "🚀",
-    },
-    {
-      id: 3,
-      title: "Breaking Boundaries: The Role of Faith in Leadership",
-      excerpt: "How faith-centered values can strengthen your leadership journey.",
-      author: "Kofi Asiedu",
-      date: "March 5, 2024",
-      category: "Faith & Leadership",
-      image: "⛪",
-    },
-    {
-      id: 4,
-      title: "CDIO Conference 2024: What You Missed and What's Next",
-      excerpt: "Highlights from our flagship event and announcements for the coming year.",
-      author: "Ama Boateng",
-      date: "February 28, 2024",
-      category: "Events",
-      image: "🎤",
-    },
-    {
-      id: 5,
-      title: "Mentorship Matters: Building Meaningful Professional Relationships",
-      excerpt: "How to find the right mentor and maximize the mentorship experience.",
-      author: "Zainab Mohammed",
-      date: "February 20, 2024",
-      category: "Mentorship",
-      image: "👥",
-    },
-    {
-      id: 6,
-      title: "Cultural Diplomacy in the Digital Age",
-      excerpt: "Navigating international relations in our increasingly connected world.",
-      author: "Nana Owusu",
-      date: "February 15, 2024",
-      category: "Culture",
-      image: "🌐",
-    },
-  ];
+  const [posts, setPosts] = useState<BlogPost[]>([]);
+
+  useEffect(() => {
+    const loadPosts = async () => {
+      try {
+        const response = await fetch("/api/blog", { cache: "no-store" });
+        const data = await response.json();
+        setPosts(Array.isArray(data.posts) ? data.posts : []);
+      } catch {
+        setPosts([]);
+      }
+    };
+
+    void loadPosts();
+  }, []);
 
   return (
     <div className="pt-20 min-h-screen bg-white">
@@ -77,6 +50,13 @@ export default function Blog() {
             </h1>
             <p className="text-lg sm:text-xl text-gray-200">
               Insights, stories, and inspiration for emerging leaders
+            </p>
+            <p className="text-sm text-gray-300 mt-4">
+              For your content manager: use
+              {" "}
+              <a href="/admin/blog" className="text-gold underline underline-offset-4">
+                Blog Admin Portal
+              </a>
             </p>
           </motion.div>
         </div>
