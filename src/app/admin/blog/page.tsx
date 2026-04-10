@@ -26,10 +26,20 @@ const initialForm = {
   title: "",
   excerpt: "",
   author: "",
-  category: "",
+  category: "Leadership",
   image: "📰",
   content: "",
 };
+
+const categoryOptions = [
+  "Leadership",
+  "Programs",
+  "Conference",
+  "Partnership",
+  "Youth Development",
+  "Success Stories",
+  "Announcements",
+];
 
 export default function BlogAdminPage() {
   const [password, setPassword] = useState("");
@@ -291,13 +301,18 @@ export default function BlogAdminPage() {
                   </div>
                   <div>
                     <label className="block text-sm font-semibold text-deep-blue mb-1">Category</label>
-                    <input
+                    <select
                       value={form.category}
                       onChange={(e) => setForm((f) => ({ ...f, category: e.target.value }))}
                       className="w-full rounded-lg border border-gray-300 px-3 py-2"
-                      placeholder="Leadership"
                       required
-                    />
+                    >
+                      {categoryOptions.map((option) => (
+                        <option key={option} value={option}>
+                          {option}
+                        </option>
+                      ))}
+                    </select>
                   </div>
                 </div>
 

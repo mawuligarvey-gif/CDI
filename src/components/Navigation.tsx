@@ -16,6 +16,7 @@ export default function Navigation() {
     { name: "Conference", href: "/conference" },
     { name: "Blog", href: "/blog" },
     { name: "Contact", href: "/contact" },
+    { name: "Admin", href: "/admin" },
   ];
 
   return (

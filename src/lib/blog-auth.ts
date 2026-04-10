@@ -6,6 +6,17 @@ const DEFAULT_BLOG_ADMIN_PASSWORD = "cdio-admin-2026";
 const AUTH_COOKIE_NAME = "cdio_blog_admin";
 const AUTH_FILE_PATH = path.join(process.cwd(), "src", "data", "admin-auth.json");
 
+function secureStringEqual(left: string, right: string): boolean {
+  const leftBuffer = Buffer.from(left, "utf8");
+  const rightBuffer = Buffer.from(right, "utf8");
+
+  if (leftBuffer.length !== rightBuffer.length) {
+    return false;
+  }
+
+  return timingSafeEqual(leftBuffer, rightBuffer);
+}
+
 type StoredAuth = {
   passwordHash: string;
   salt: string;
@@ -108,6 +119,35 @@ export async function updateBlogPassword(
   const currentIsValid = await isValidBlogPassword(currentPassword);
   if (!currentIsValid) {
     return { success: false, error: "Current password is incorrect." };
+  }
+
+  if (nextPassword.length < 10) {
+    return { success: false, error: "New password must be at least 10 characters." };
+  }
+
+  await writeStoredAuth(nextPassword);
+  return { success: true };
+}
+
+export function isBlogPasswordResetEnabled(): boolean {
+  return Boolean(process.env.BLOG_ADMIN_RESET_KEY && process.env.BLOG_ADMIN_RESET_KEY.trim());
+}
+
+export async function resetBlogPasswordWithRecoveryKey(
+  recoveryKey: string,
+  nextPassword: string
+): Promise<{ success: true } | { success: false; error: string }> {
+  const configuredRecoveryKey = process.env.BLOG_ADMIN_RESET_KEY?.trim() || "";
+
+  if (!configuredRecoveryKey) {
+    return {
+      success: false,
+      error: "Password recovery is not configured yet. Ask your developer to set BLOG_ADMIN_RESET_KEY.",
+    };
+  }
+
+  if (!secureStringEqual(recoveryKey.trim(), configuredRecoveryKey)) {
+    return { success: false, error: "Recovery key is invalid." };
   }
 
   if (nextPassword.length < 10) {
