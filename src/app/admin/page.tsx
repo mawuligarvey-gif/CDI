@@ -6,7 +6,6 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 
 type SessionResponse = {
-  authenticated: boolean;
   usingDefaultPassword: boolean;
 };
 
@@ -49,7 +48,6 @@ export default function AdminPortalPage() {
       try {
         const response = await fetch("/api/admin/session", { cache: "no-store" });
         const data = (await response.json()) as SessionResponse;
-        setAuthenticated(Boolean(data.authenticated));
         setUsingDefaultPassword(Boolean(data.usingDefaultPassword));
       } catch {
         setError("Could not load admin session.");
