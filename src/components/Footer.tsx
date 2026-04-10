@@ -156,13 +156,10 @@ export default function Footer() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
-          className="flex flex-col md:flex-row justify-between items-center"
+          className="flex flex-col md:flex-row justify-center items-center"
         >
           <p className="text-gray-300 text-sm text-center md:text-left mb-4 md:mb-0">
             © {currentYear} Cultural Diplomat Impact Organization. All rights reserved.
-          </p>
-          <p className="text-gray-400 text-xs">
-            Designed with <span className="text-gold">❤️</span> for Impact
           </p>
         </motion.div>
       </div>
