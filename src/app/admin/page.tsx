@@ -25,6 +25,11 @@ const adminSections = [
     description: "Manage conference details and upload flyers.",
     href: "/admin/conference",
   },
+  {
+    title: "Settings",
+    description: "Change admin password and security settings.",
+    href: "/admin/settings",
+  },
 ];
 
 export default function AdminPortalPage() {
@@ -255,7 +260,7 @@ export default function AdminPortalPage() {
               <p className="text-gray-600">Choose what you want to manage.</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
               {adminSections.map((section, index) => (
                 <motion.div
                   key={section.href}

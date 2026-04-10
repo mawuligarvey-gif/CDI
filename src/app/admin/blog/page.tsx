@@ -52,12 +52,6 @@ export default function BlogAdminPage() {
   const [publishing, setPublishing] = useState(false);
   const [success, setSuccess] = useState("");
   const [posts, setPosts] = useState<BlogPost[]>([]);
-  const [currentPassword, setCurrentPassword] = useState("");
-  const [newPassword, setNewPassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  const [passwordSaving, setPasswordSaving] = useState(false);
-  const [passwordError, setPasswordError] = useState("");
-  const [passwordSuccess, setPasswordSuccess] = useState("");
 
   useEffect(() => {
     const loadSession = async () => {
@@ -145,57 +139,6 @@ export default function BlogAdminPage() {
       setError("Could not publish post.");
     } finally {
       setPublishing(false);
-    }
-  };
-
-  const handlePasswordChange = async (event: FormEvent<HTMLFormElement>) => {
-    event.preventDefault();
-    setPasswordError("");
-    setPasswordSuccess("");
-
-    if (!currentPassword || !newPassword || !confirmPassword) {
-      setPasswordError("Please fill in all password fields.");
-      return;
-    }
-
-    if (newPassword !== confirmPassword) {
-      setPasswordError("New password and confirmation do not match.");
-      return;
-    }
-
-    if (newPassword.length < 10) {
-      setPasswordError("New password must be at least 10 characters.");
-      return;
-    }
-
-    setPasswordSaving(true);
-
-    try {
-      const response = await fetch("/api/admin/password", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          currentPassword,
-          newPassword,
-          confirmPassword,
-        }),
-      });
-
-      const data = await response.json();
-      if (!response.ok) {
-        setPasswordError(data.error || "Could not update password.");
-        return;
-      }
-
-      setCurrentPassword("");
-      setNewPassword("");
-      setConfirmPassword("");
-      setUsingDefaultPassword(Boolean(data.usingDefaultPassword));
-      setPasswordSuccess("Password updated successfully.");
-    } catch {
-      setPasswordError("Could not update password.");
-    } finally {
-      setPasswordSaving(false);
     }
   };
 
@@ -362,74 +305,10 @@ export default function BlogAdminPage() {
                   <Link href="/admin/conference" className="text-gold hover:underline underline-offset-4">
                     Edit Conference Page Content and Flyers
                   </Link>
+                  <Link href="/admin/settings" className="text-gold hover:underline underline-offset-4">
+                    Open Settings
+                  </Link>
                 </div>
-              </div>
-
-              <div className="bg-white border border-gold/30 rounded-2xl p-6 shadow-sm">
-                <h3 className="text-lg font-bold text-deep-blue mb-1">Change Admin Password</h3>
-                <p className="text-sm text-gray-600 mb-4">
-                  Use at least 10 characters with a mix of letters, numbers, and symbols.
-                </p>
-
-                <form onSubmit={handlePasswordChange} className="space-y-3">
-                  <div>
-                    <label className="block text-sm font-semibold text-deep-blue mb-1">
-                      Current Password
-                    </label>
-                    <input
-                      type="password"
-                      value={currentPassword}
-                      onChange={(e) => setCurrentPassword(e.target.value)}
-                      className="w-full rounded-lg border border-gray-300 px-3 py-2"
-                      placeholder="Enter current password"
-                      title="Current password"
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-semibold text-deep-blue mb-1">
-                      New Password
-                    </label>
-                    <input
-                      type="password"
-                      value={newPassword}
-                      onChange={(e) => setNewPassword(e.target.value)}
-                      className="w-full rounded-lg border border-gray-300 px-3 py-2"
-                      placeholder="Enter new password"
-                      title="New password"
-                      minLength={10}
-                      required
-                    />
-                  </div>
-
-                  <div>
-                    <label className="block text-sm font-semibold text-deep-blue mb-1">
-                      Confirm New Password
-                    </label>
-                    <input
-                      type="password"
-                      value={confirmPassword}
-                      onChange={(e) => setConfirmPassword(e.target.value)}
-                      className="w-full rounded-lg border border-gray-300 px-3 py-2"
-                      placeholder="Confirm new password"
-                      title="Confirm new password"
-                      minLength={10}
-                      required
-                    />
-                  </div>
-
-                  {passwordError && <p className="text-sm text-red-600">{passwordError}</p>}
-                  {passwordSuccess && <p className="text-sm text-green-700">{passwordSuccess}</p>}
-
-                  <button
-                    type="submit"
-                    disabled={passwordSaving}
-                    className="w-full px-4 py-2 rounded-lg bg-deep-blue text-white font-semibold hover:opacity-95 disabled:opacity-60"
-                  >
-                    {passwordSaving ? "Updating..." : "Update Password"}
-                  </button>
-                </form>
               </div>
 
               <div className="bg-deep-blue/5 border border-gold/20 rounded-2xl p-6">
