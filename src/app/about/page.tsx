@@ -39,6 +39,13 @@ export default function About() {
       objectPosition: "center 15%",
       bio: "A Ghanaian filmmaker, producer, and media entrepreneur specializing in visual storytelling, cinematography, and creative production.",
     },
+    {
+      name: "Donkor Ebenezer Ofori",
+      role: "Creative Strategist",
+      image: "/images/team/donkor-ofori.jpeg",
+      objectPosition: "center 18%",
+      bio: "A Ghanaian creative strategist and cultural diplomat shaping global narratives through strategy-driven storytelling across music, fashion, and media.",
+    },
     
   ];
 
