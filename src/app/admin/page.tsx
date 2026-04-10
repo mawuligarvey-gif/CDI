@@ -141,7 +141,7 @@ export default function AdminPortalPage() {
   }
 
   return (
-    <div className="min-h-screen pt-24 pb-16 bg-gradient-to-b from-white via-gold/5 to-deep-blue/5">
+    <div className="min-h-screen pt-20 sm:pt-24 pb-10 sm:pb-16 bg-gradient-to-b from-white via-gold/5 to-deep-blue/5">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {!authenticated ? (
           <div className="max-w-xl mx-auto">
@@ -150,22 +150,24 @@ export default function AdminPortalPage() {
               animate={{ opacity: 1, y: 0 }}
               className="rounded-3xl bg-white border border-gold/30 shadow-lg overflow-hidden"
             >
-              <div className="bg-deep-blue text-white p-7 text-center">
-                <div className="mx-auto mb-3 w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center">
+              <div className="bg-deep-blue text-white px-5 py-6 sm:p-7 text-center">
+                <div className="mx-auto mb-3 w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white/10 flex items-center justify-center">
                   <Image
                     src="/images/gallery/logo.png"
                     alt="CDI Logo"
                     width={46}
                     height={46}
-                    className="h-auto"
+                    className="h-auto w-10 sm:w-11"
                     priority
                   />
                 </div>
-                <h1 className="text-2xl font-bold">CDI Admin Portal</h1>
-                <p className="text-sm text-gray-200 mt-1">One secure link for Blog, Programs, and Conference management.</p>
+                <h1 className="text-xl sm:text-2xl font-bold">CDI Admin Portal</h1>
+                <p className="text-xs sm:text-sm text-gray-200 mt-1 px-1">
+                  One secure link for Blog, Programs, and Conference management.
+                </p>
               </div>
 
-              <div className="p-7 space-y-5">
+              <div className="p-5 sm:p-7 space-y-5">
                 {usingDefaultPassword && (
                   <div className="rounded-lg border border-amber-300 bg-amber-50 px-3 py-2 text-sm text-amber-900">
                     Security note: default admin password is still active. Please update it after sign in.
@@ -200,7 +202,7 @@ export default function AdminPortalPage() {
                   <button
                     type="button"
                     onClick={() => setShowReset((current) => !current)}
-                    className="text-sm font-semibold text-gold hover:underline"
+                    className="w-full sm:w-auto text-left text-sm font-semibold text-gold hover:underline"
                   >
                     Forgot password? Reset with recovery key
                   </button>
@@ -255,25 +257,25 @@ export default function AdminPortalPage() {
           </div>
         ) : (
           <div>
-            <div className="mb-8 text-center">
+            <div className="mb-6 sm:mb-8 text-center">
               <h1 className="text-3xl sm:text-4xl font-bold text-deep-blue mb-2">Admin Portal</h1>
-              <p className="text-gray-600">Choose what you want to manage.</p>
+              <p className="text-sm sm:text-base text-gray-600">Choose what you want to manage.</p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
               {adminSections.map((section, index) => (
                 <motion.div
                   key={section.href}
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="rounded-2xl border border-gold/30 bg-white p-6 shadow-sm"
+                  className="rounded-2xl border border-gold/30 bg-white p-5 sm:p-6 shadow-sm flex flex-col"
                 >
-                  <h2 className="text-xl font-bold text-deep-blue mb-2">{section.title}</h2>
-                  <p className="text-sm text-gray-600 mb-5">{section.description}</p>
+                  <h2 className="text-lg sm:text-xl font-bold text-deep-blue mb-2">{section.title}</h2>
+                  <p className="text-sm text-gray-600 mb-5 flex-grow">{section.description}</p>
                   <Link
                     href={section.href}
-                    className="inline-block px-4 py-2 rounded-lg bg-gold text-deep-blue font-bold hover:opacity-90"
+                    className="inline-flex w-full justify-center px-4 py-2 rounded-lg bg-gold text-deep-blue font-bold hover:opacity-90"
                   >
                     Open Section
                   </Link>
