@@ -1,10 +1,49 @@
 "use client";
 
+import { useEffect, useState } from "react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { Calendar, Users, Ticket, MapPin } from "lucide-react";
 
-export default function Conference() {
-  const schedule = [
+type ConferenceStat = {
+  icon: "users" | "ticket" | "calendar";
+  label: string;
+  desc: string;
+};
+
+type ConferenceContent = {
+  title: string;
+  subtitle: string;
+  location: string;
+  keyStats: ConferenceStat[];
+  highlights: string[];
+  schedule: Array<{ time: string; event: string; hall: string }>;
+  speakers: Array<{ name: string; role: string; image: string }>;
+  flyers: Array<{ title: string; imageUrl: string }>;
+  ctaTitle: string;
+  ctaText: string;
+  ctaButtonText: string;
+  ctaHref: string;
+};
+
+const fallbackConference: ConferenceContent = {
+  title: "Cultural Diplomat Impact Conference",
+  subtitle: "Join us for our flagship annual conference bringing together leaders, innovators, and changemakers from across Africa",
+  location: "Accra, Ghana",
+  keyStats: [
+    { icon: "users", label: "2000+", desc: "Attendees Expected" },
+    { icon: "ticket", label: "50+", desc: "Industry Speakers" },
+    { icon: "calendar", label: "2 Days", desc: "Of Pure Impact" },
+  ],
+  highlights: [
+    "Keynote speeches from global leaders",
+    "Interactive masterclasses & workshops",
+    "Exclusive networking sessions",
+    "Startup pitch competition with prizes",
+    "Cultural performances & celebrations",
+    "Mentorship speed dating",
+  ],
+  schedule: [
     { time: "8:00 AM", event: "Registration & Breakfast", hall: "Main Lobby" },
     { time: "9:00 AM", event: "Opening Ceremony & Keynote", hall: "Main Hall" },
     { time: "10:30 AM", event: "Break", hall: "Everywhere!" },
@@ -13,14 +52,44 @@ export default function Conference() {
     { time: "2:00 PM", event: "Startup Pitch Competition", hall: "Main Hall" },
     { time: "4:00 PM", event: "Cultural Performances", hall: "Auditorium" },
     { time: "6:00 PM", event: "Gala Dinner", hall: "Ballroom" },
-  ];
-
-  const speakers = [
+  ],
+  speakers: [
     { name: "Dr. Kofi Annan", role: "Global Impact Leader", image: "🎤" },
     { name: "Ama Twum", role: "Tech Entrepreneur", image: "🎤" },
     { name: "Nana Owusu", role: "Cultural Ambassador", image: "🎤" },
     { name: "Zainab Ahmed", role: "Investor & Mentor", image: "🎤" },
-  ];
+  ],
+  flyers: [],
+  ctaTitle: "Don't Miss Out",
+  ctaText: "Limited spots available. Register now to secure your seat!",
+  ctaButtonText: "Register Today",
+  ctaHref: "/apply",
+};
+
+const statIcons: Record<ConferenceStat["icon"], typeof Users> = {
+  users: Users,
+  ticket: Ticket,
+  calendar: Calendar,
+};
+
+export default function Conference() {
+  const [conference, setConference] = useState<ConferenceContent>(fallbackConference);
+
+  useEffect(() => {
+    const loadConference = async () => {
+      try {
+        const response = await fetch("/api/conference", { cache: "no-store" });
+        const data = await response.json();
+        if (response.ok && data.conference) {
+          setConference(data.conference as ConferenceContent);
+        }
+      } catch {
+        setConference(fallbackConference);
+      }
+    };
+
+    void loadConference();
+  }, []);
 
   return (
     <div className="pt-20 min-h-screen bg-white">
@@ -34,19 +103,15 @@ export default function Conference() {
             className="text-center"
           >
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
-              Cultural Diplomat <span className="text-gold">Impact</span> Conference
+              {conference.title}
             </h1>
             <p className="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto mb-8">
-              Join us for our flagship annual conference bringing together leaders, innovators, and changemakers from across Africa
+              {conference.subtitle}
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <div className="flex items-center gap-2 text-lg">
-                <Calendar size={24} />
-                <span>July 15-16, 2024</span>
-              </div>
+            <div className="flex justify-center">
               <div className="flex items-center gap-2 text-lg">
                 <MapPin size={24} />
-                <span>Accra, Ghana</span>
+                <span>{conference.location}</span>
               </div>
             </div>
           </motion.div>
@@ -57,11 +122,10 @@ export default function Conference() {
       <section className="py-20 md:py-32 bg-gradient-to-b from-white to-gold/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
-            {[
-              { icon: Users, label: "2000+", desc: "Attendees Expected" },
-              { icon: Ticket, label: "50+", desc: "Industry Speakers" },
-              { icon: Calendar, label: "2 Days", desc: "Of Pure Impact" },
-            ].map((item, i) => (
+            {conference.keyStats.map((item, i) => {
+              const Icon = statIcons[item.icon] || Users;
+
+              return (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
@@ -71,12 +135,12 @@ export default function Conference() {
                 className="text-center"
               >
                 <div className="w-12 sm:w-16 h-12 sm:h-16 mx-auto mb-4 bg-gold/20 rounded-full flex items-center justify-center">
-                  <item.icon className="text-gold" size={24} />
+                  <Icon className="text-gold" size={24} />
                 </div>
                 <p className="text-2xl sm:text-4xl font-bold text-deep-blue mb-2">{item.label}</p>
                 <p className="text-sm sm:text-base text-gray-600">{item.desc}</p>
               </motion.div>
-            ))}
+            )})}
           </div>
 
           {/* Description */}
@@ -88,14 +152,7 @@ export default function Conference() {
           >
             <h3 className="text-2xl font-bold text-deep-blue mb-4">What to Expect</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {[
-                "Keynote speeches from global leaders",
-                "Interactive masterclasses & workshops",
-                "Exclusive networking sessions",
-                "Startup pitch competition with prizes",
-                "Cultural performances & celebrations",
-                "Mentorship speed dating",
-              ].map((item, i) => (
+              {conference.highlights.map((item, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, x: -20 }}
@@ -128,7 +185,7 @@ export default function Conference() {
           </motion.div>
 
           <div className="space-y-4">
-            {schedule.map((item, i) => (
+            {conference.schedule.map((item, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, x: -50 }}
@@ -163,7 +220,7 @@ export default function Conference() {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {speakers.map((speaker, i) => (
+            {conference.speakers.map((speaker, i) => (
               <motion.div
                 key={i}
                 initial={{ opacity: 0, y: 20 }}
@@ -182,6 +239,43 @@ export default function Conference() {
         </div>
       </section>
 
+      {conference.flyers.length > 0 && (
+        <section className="py-20 md:py-32 bg-white">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-3xl sm:text-4xl font-bold text-deep-blue mb-4">
+                Conference <span className="text-gold">Flyers</span>
+              </h2>
+            </motion.div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {conference.flyers.map((flyer, i) => (
+                <motion.div
+                  key={`${flyer.imageUrl}-${i}`}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: i * 0.06 }}
+                  className="rounded-2xl border border-gold/30 overflow-hidden bg-white shadow-sm"
+                >
+                  <div className="relative h-72 bg-gray-100">
+                    <Image src={flyer.imageUrl} alt={flyer.title} fill className="object-cover" />
+                  </div>
+                  <div className="p-4">
+                    <p className="font-semibold text-deep-blue">{flyer.title}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Registration CTA */}
       <section className="py-20 md:py-32 bg-deep-blue text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -192,20 +286,20 @@ export default function Conference() {
             className="mb-8"
           >
             <h2 className="text-4xl font-bold mb-4">
-              Don't Miss Out
+              {conference.ctaTitle}
             </h2>
             <p className="text-lg text-gray-200 mb-8">
-              Limited spots available. Register now to secure your seat!
+              {conference.ctaText}
             </p>
           </motion.div>
 
           <motion.a
-            href="/apply"
+            href={conference.ctaHref}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-block px-8 py-4 bg-gold text-deep-blue rounded-lg font-bold text-lg hover:shadow-gold transition-all cursor-pointer"
           >
-            Register Today
+            {conference.ctaButtonText}
           </motion.a>
         </div>
       </section>

@@ -1,76 +1,37 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { CheckCircle } from "lucide-react";
 import Link from "next/link";
 
+type Program = {
+  id: number;
+  title: string;
+  icon: string;
+  description: string;
+  duration: string;
+  benefits: string[];
+  format: string;
+  investment: string;
+};
+
 export default function Programs() {
-  const programs = [
-    {
-      id: 1,
-      title: "Leadership & Entrepreneurship Training",
-      icon: "🚀",
-      description: "Intensive program for aspiring entrepreneurs and leaders",
-      duration: "3-6 months",
-      benefits: [
-        "Business planning & strategy",
-        "Financial management",
-        "Digital marketing",
-        "Pitch training",
-        "Networking opportunities",
-      ],
-      format: "Hybrid (Online + In-Person Workshops)",
-      investment: "Free for qualified applicants",
-    },
-    {
-      id: 2,
-      title: "Cultural Diplomacy Internship",
-      icon: "🌐",
-      description: "International experience in cultural and diplomatic affairs",
-      duration: "6-12 months",
-      benefits: [
-        "Work with international organizations",
-        "Cultural exchange programs",
-        "Language opportunities",
-        "Global networking",
-        "Career development",
-      ],
-      format: "Placement-based + Mentoring",
-      investment: "Paid stipend provided",
-    },
-    {
-      id: 3,
-      title: "Mentorship Program",
-      icon: "🤝",
-      description: "One-on-one guidance from experienced industry leaders",
-      duration: "6 months - Ongoing",
-      benefits: [
-        "Personalized guidance",
-        "Goal setting & tracking",
-        "Career counseling",
-        "Industry connections",
-        "Skill development",
-      ],
-      format: "Individual Meetings + Group Events",
-      investment: "Free",
-    },
-    {
-      id: 4,
-      title: "Funding Opportunities",
-      icon: "💰",
-      description: "Grant and investment support for innovative ideas",
-      duration: "Ongoing applications",
-      benefits: [
-        "Startup grants up to ₵50,000",
-        "Investment connections",
-        "Business coaching",
-        "Incubation support",
-        "Growth mentorship",
-      ],
-      format: "Application-based",
-      investment: "Equity-free grants available",
-    },
-  ];
+  const [programs, setPrograms] = useState<Program[]>([]);
+
+  useEffect(() => {
+    const loadPrograms = async () => {
+      try {
+        const response = await fetch("/api/programs", { cache: "no-store" });
+        const data = await response.json();
+        setPrograms(Array.isArray(data.programs) ? (data.programs as Program[]) : []);
+      } catch {
+        setPrograms([]);
+      }
+    };
+
+    void loadPrograms();
+  }, []);
 
   return (
     <div className="pt-20">

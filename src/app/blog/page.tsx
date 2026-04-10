@@ -51,13 +51,6 @@ export default function Blog() {
             <p className="text-lg sm:text-xl text-gray-200">
               Insights, stories, and inspiration for emerging leaders
             </p>
-            <p className="text-sm text-gray-300 mt-4">
-              For your content manager: use
-              {" "}
-              <a href="/admin/blog" className="text-gold underline underline-offset-4">
-                Blog Admin Portal
-              </a>
-            </p>
           </motion.div>
         </div>
       </section>

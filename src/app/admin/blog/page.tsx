@@ -2,6 +2,7 @@
 
 import { FormEvent, useEffect, useState } from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
 type BlogPost = {
   id: number;
@@ -337,6 +338,18 @@ export default function BlogAdminPage() {
             </div>
 
             <div className="lg:col-span-2 space-y-6">
+              <div className="bg-white border border-gold/30 rounded-2xl p-6 shadow-sm">
+                <h3 className="text-lg font-bold text-deep-blue mb-3">Content Admin Links</h3>
+                <div className="flex flex-col gap-2 text-sm">
+                  <Link href="/admin/programs" className="text-gold hover:underline underline-offset-4">
+                    Edit Programs Page Content
+                  </Link>
+                  <Link href="/admin/conference" className="text-gold hover:underline underline-offset-4">
+                    Edit Conference Page Content and Flyers
+                  </Link>
+                </div>
+              </div>
+
               <div className="bg-white border border-gold/30 rounded-2xl p-6 shadow-sm">
                 <h3 className="text-lg font-bold text-deep-blue mb-1">Change Admin Password</h3>
                 <p className="text-sm text-gray-600 mb-4">

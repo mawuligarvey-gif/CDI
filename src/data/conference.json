@@ -1,0 +1,99 @@
+{
+  "title": "Cultural Diplomat Impact Conference",
+  "subtitle": "Join us for our flagship annual conference bringing together leaders, innovators, and changemakers from across Africa",
+  "location": "Accra, Ghana",
+  "keyStats": [
+    {
+      "icon": "users",
+      "label": "2000+",
+      "desc": "Attendees Expected"
+    },
+    {
+      "icon": "ticket",
+      "label": "50+",
+      "desc": "Industry Speakers"
+    },
+    {
+      "icon": "calendar",
+      "label": "2 Days",
+      "desc": "Of Pure Impact"
+    }
+  ],
+  "highlights": [
+    "Keynote speeches from global leaders",
+    "Interactive masterclasses & workshops",
+    "Exclusive networking sessions",
+    "Startup pitch competition with prizes",
+    "Cultural performances & celebrations",
+    "Mentorship speed dating"
+  ],
+  "schedule": [
+    {
+      "time": "8:00 AM",
+      "event": "Registration & Breakfast",
+      "hall": "Main Lobby"
+    },
+    {
+      "time": "9:00 AM",
+      "event": "Opening Ceremony & Keynote",
+      "hall": "Main Hall"
+    },
+    {
+      "time": "10:30 AM",
+      "event": "Break",
+      "hall": "Everywhere!"
+    },
+    {
+      "time": "10:45 AM",
+      "event": "Parallel Workshops (Choose 1)",
+      "hall": "Breakout Rooms"
+    },
+    {
+      "time": "12:30 PM",
+      "event": "Networking Lunch",
+      "hall": "Main Lobby"
+    },
+    {
+      "time": "2:00 PM",
+      "event": "Startup Pitch Competition",
+      "hall": "Main Hall"
+    },
+    {
+      "time": "4:00 PM",
+      "event": "Cultural Performances",
+      "hall": "Auditorium"
+    },
+    {
+      "time": "6:00 PM",
+      "event": "Gala Dinner",
+      "hall": "Ballroom"
+    }
+  ],
+  "speakers": [
+    {
+      "name": "Dr. Kofi Annan",
+      "role": "Global Impact Leader",
+      "image": "🎤"
+    },
+    {
+      "name": "Ama Twum",
+      "role": "Tech Entrepreneur",
+      "image": "🎤"
+    },
+    {
+      "name": "Nana Owusu",
+      "role": "Cultural Ambassador",
+      "image": "🎤"
+    },
+    {
+      "name": "Zainab Ahmed",
+      "role": "Investor & Mentor",
+      "image": "🎤"
+    }
+  ],
+  "flyers": [],
+  "ctaTitle": "Don't Miss Out",
+  "ctaText": "Limited spots available. Register now to secure your seat!",
+  "ctaButtonText": "Register Today",
+  "ctaHref": "/apply"
+}
