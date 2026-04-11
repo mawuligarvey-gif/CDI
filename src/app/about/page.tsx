@@ -13,6 +13,20 @@ export default function About() {
       bio: "Award-winning filmmaker and cultural diplomat leading initiatives that empower African youth through mentorship, leadership, and entrepreneurship programs",
     },
     {
+      name: "Emmanuel Vitashie",
+      role: "Head of Programs & Research",
+      image: "/images/team/emmanuel-vitashie.jpeg",
+      objectPosition: "center 16%",
+      bio: "A research-driven program leader who designs and executes high-impact initiatives, translating vision into scalable, results-oriented programs.",
+    },
+    {
+      name: "Donkor Ebenezer Ofori",
+      role: "Creative Strategist",
+      image: "/images/team/donkor-ofori.jpeg",
+      objectPosition: "center 18%",
+      bio: "A Ghanaian creative strategist and cultural diplomat shaping global narratives through strategy-driven storytelling across music, fashion, and media.",
+    },
+    {
       name: "Christabel Badagbor",
       role: " Head of Operations",
       image: "/images/team/christabel-badagbor.jpeg",
@@ -26,27 +40,13 @@ export default function About() {
       bio: "An administrative and operations professional supporting the planning and execution of cultural and leadership programs.",
     },
     {
-      name: "Emmanuel Vitashie",
-      role: "Head of Programs & Research",
-      image: "/images/team/emmanuel-vitashie.jpeg",
-      objectPosition: "center 16%",
-      bio: "A research-driven program leader who designs and executes high-impact initiatives, translating vision into scalable, results-oriented programs.",
-    },
-    {
       name: "Emmanuel Selormey",
       role: "Head of Production",
       image: "/images/team/emmanuel-selormey.png",
       objectPosition: "center 15%",
       bio: "A Ghanaian filmmaker, producer, and media entrepreneur specializing in visual storytelling, cinematography, and creative production.",
     },
-    {
-      name: "Donkor Ebenezer Ofori",
-      role: "Creative Strategist",
-      image: "/images/team/donkor-ofori.jpeg",
-      objectPosition: "center 18%",
-      bio: "A Ghanaian creative strategist and cultural diplomat shaping global narratives through strategy-driven storytelling across music, fashion, and media.",
-    },
-    
+
   ];
 
   return (
