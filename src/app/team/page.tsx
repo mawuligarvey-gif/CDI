@@ -15,7 +15,7 @@ export default function Team() {
     {
       name: "Alaba Adewale Adebajo",
       role: "Chairman",
-      image: "/images/team/alaba-adebajo.jpeg",
+      image: "/images/team/alaba-adewale.jpeg",
       bio: "A seasoned businessman, visionary leader, and ordained pastor known for bridging faith and business to drive excellence and transformation. He empowers individuals and leaders through strategic insight, strong values, and purpose-driven teachings.",
     },
     {
