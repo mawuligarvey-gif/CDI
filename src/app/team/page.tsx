@@ -16,6 +16,7 @@ export default function Team() {
       name: "Alaba Adewale Adebajo",
       role: "Chairman",
       image: "/images/team/alaba-adewale.jpeg",
+      objectPosition: "center 12%",
       bio: "A seasoned businessman, visionary leader, and ordained pastor known for bridging faith and business to drive excellence and transformation. He empowers individuals and leaders through strategic insight, strong values, and purpose-driven teachings.",
     },
     {
@@ -54,9 +55,6 @@ export default function Team() {
     },
   ];
 
-  const executiveMembers = team.slice(0, 2);
-  const otherMembers = team.slice(2);
-
   return (
     <div className="pt-20 min-h-screen bg-gradient-to-b from-white via-deep-blue/5 to-white">
       {/* Hero */}
@@ -81,68 +79,23 @@ export default function Team() {
       {/* Team Layout */}
       <section className="py-20 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-12 text-center">
+          <div className="mb-10 text-center">
             <p className="text-sm font-semibold uppercase tracking-[0.35em] text-gold mb-3">
-              Executive Leadership
+              Leadership And Team
             </p>
             <h2 className="text-3xl md:text-4xl font-bold text-deep-blue mb-4">
-              Founder And Chairman
+              Meet The Full CDI Team
             </h2>
             <p className="max-w-3xl mx-auto text-base md:text-lg text-gray-600">
-              CDI is led by a strong executive team bringing together cultural vision, strategic leadership, and operational excellence.
+              Every team member is shown below, with the founder and chairman highlighted first and the rest of the leadership team following in the same section.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 mb-16">
-            {executiveMembers.map((member, index) => (
-              <motion.div
-                key={member.name}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="rounded-3xl bg-white border border-gold/40 shadow-xl overflow-hidden"
-              >
-                <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch min-h-full">
-                  <div className="relative min-h-[420px] bg-gold/10">
-                    <Image
-                      src={member.image}
-                      alt={member.name}
-                      fill
-                      className="object-cover"
-                      style={{ objectPosition: member.objectPosition || "center" }}
-                      sizes="(max-width: 1280px) 100vw, 50vw"
-                    />
-                  </div>
-                  <div className="p-8 lg:p-10 bg-gradient-to-br from-white to-gold/10 flex flex-col justify-center">
-                    <p className="text-sm font-semibold uppercase tracking-widest text-gold mb-3">
-                      {index === 0 ? "Founder Spotlight" : "Chairman Spotlight"}
-                    </p>
-                    <h2 className="text-3xl font-bold text-deep-blue mb-2">{member.name}</h2>
-                    <p className="text-gold font-semibold mb-4">{member.role}</p>
-                    <p className="text-gray-700 leading-relaxed">{member.bio}</p>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+            {team.map((member, i) => {
+              const isLeadership = i < 2;
 
-          <div className="mb-8 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
-            <div>
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-gold mb-2">
-                Core Team
-              </p>
-              <h3 className="text-2xl md:text-3xl font-bold text-deep-blue">
-                The People Powering The Mission
-              </h3>
-            </div>
-            <p className="max-w-2xl text-gray-600">
-              From programs and operations to production and strategy, each member plays a vital role in advancing CDI's work.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
-            {otherMembers.map((member, i) => (
+              return (
               <motion.div
                 key={member.name}
                 initial={{ opacity: 0, scale: 0.9 }}
@@ -150,26 +103,58 @@ export default function Team() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
                 whileHover={{ y: -10 }}
-                className="rounded-2xl bg-white border border-gold/30 overflow-hidden shadow-sm hover:shadow-xl hover:border-gold/60 transition-all"
+                className={[
+                  "group overflow-hidden transition-all",
+                  isLeadership
+                    ? "rounded-3xl bg-white border border-gold/40 shadow-xl md:col-span-2"
+                    : "rounded-2xl bg-white border border-gold/30 shadow-sm hover:shadow-xl hover:border-gold/60",
+                ].join(" ")}
               >
-                <div className="relative h-64 bg-gold/10">
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    className="object-cover"
-                    style={{ objectPosition: member.objectPosition || "center" }}
-                    sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
-                  />
-                </div>
+                {isLeadership ? (
+                  <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch min-h-full">
+                    <div className="relative min-h-[420px] bg-gold/10">
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        style={{ objectPosition: member.objectPosition || "center" }}
+                        sizes="(max-width: 1280px) 100vw, 50vw"
+                      />
+                    </div>
+                    <div className="p-8 lg:p-10 bg-gradient-to-br from-white to-gold/10 flex flex-col justify-center">
+                      <p className="text-sm font-semibold uppercase tracking-widest text-gold mb-3">
+                        {i === 0 ? "Founder" : "Chairman"}
+                      </p>
+                      <h3 className="text-3xl font-bold text-deep-blue mb-2">{member.name}</h3>
+                      <p className="text-gold font-semibold mb-4">{member.role}</p>
+                      <p className="text-gray-700 leading-relaxed">{member.bio}</p>
+                    </div>
+                  </div>
+                ) : (
+                  <>
+                    <div className="relative h-64 bg-gold/10">
+                      <div className="absolute inset-x-0 top-0 z-10 h-1 bg-gradient-to-r from-gold/30 via-gold to-gold/30" />
+                      <Image
+                        src={member.image}
+                        alt={member.name}
+                        fill
+                        className="object-cover transition-transform duration-700 group-hover:scale-105"
+                        style={{ objectPosition: member.objectPosition || "center" }}
+                        sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
+                      />
+                    </div>
 
-                <div className="p-6">
-                  <h3 className="text-xl font-bold text-deep-blue mb-1">{member.name}</h3>
-                  <p className="text-gold font-semibold text-sm mb-3">{member.role}</p>
-                  <p className="text-gray-600 text-sm leading-relaxed">{member.bio}</p>
-                </div>
+                    <div className="p-6">
+                      <h3 className="text-xl font-bold text-deep-blue mb-1">{member.name}</h3>
+                      <p className="text-gold font-semibold text-sm mb-3">{member.role}</p>
+                      <p className="text-gray-600 text-sm leading-relaxed">{member.bio}</p>
+                    </div>
+                  </>
+                )}
               </motion.div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>

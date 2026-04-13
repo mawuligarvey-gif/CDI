@@ -13,6 +13,13 @@ export default function About() {
       bio: "Award-winning filmmaker and cultural diplomat leading initiatives that empower African youth through mentorship, leadership, and entrepreneurship programs",
     },
     {
+      name: "Alaba Adewale Adebajo",
+      role: "Chairman",
+      image: "/images/team/alaba-adewale.jpeg",
+      objectPosition: "center 12%",
+      bio: "A seasoned businessman, visionary leader, and ordained pastor known for bridging faith and business to drive excellence and transformation. He empowers individuals and leaders through strategic insight, strong values, and purpose-driven teachings.",
+    },
+    {
       name: "Emmanuel Vitashie",
       role: "Head of Programs & Research",
       image: "/images/team/emmanuel-vitashie.jpeg",
