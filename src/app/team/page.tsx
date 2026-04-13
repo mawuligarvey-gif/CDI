@@ -54,7 +54,8 @@ export default function Team() {
     },
   ];
 
-  const [featuredMember, ...otherMembers] = team;
+  const executiveMembers = team.slice(0, 2);
+  const otherMembers = team.slice(2);
 
   return (
     <div className="pt-20 min-h-screen bg-gradient-to-b from-white via-deep-blue/5 to-white">
@@ -80,35 +81,67 @@ export default function Team() {
       {/* Team Layout */}
       <section className="py-20 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="mb-10 rounded-3xl bg-white border border-gold/40 shadow-xl overflow-hidden"
-          >
-            <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch">
-              <div className="relative min-h-[420px]">
-                <Image
-                  src={featuredMember.image}
-                  alt={featuredMember.name}
-                  fill
-                  className="object-cover"
-                  style={{ objectPosition: featuredMember.objectPosition || "center" }}
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                />
-              </div>
-              <div className="p-8 lg:p-10 bg-gradient-to-br from-white to-gold/10 flex flex-col justify-center">
-                <p className="text-sm font-semibold uppercase tracking-widest text-gold mb-3">
-                  Leadership Spotlight
-                </p>
-                <h2 className="text-3xl font-bold text-deep-blue mb-2">{featuredMember.name}</h2>
-                <p className="text-gold font-semibold mb-4">{featuredMember.role}</p>
-                <p className="text-gray-700 leading-relaxed">{featuredMember.bio}</p>
-              </div>
-            </div>
-          </motion.div>
+          <div className="mb-12 text-center">
+            <p className="text-sm font-semibold uppercase tracking-[0.35em] text-gold mb-3">
+              Executive Leadership
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-deep-blue mb-4">
+              Founder And Chairman
+            </h2>
+            <p className="max-w-3xl mx-auto text-base md:text-lg text-gray-600">
+              CDI is led by a strong executive team bringing together cultural vision, strategic leadership, and operational excellence.
+            </p>
+          </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 xl:grid-cols-2 gap-8 mb-16">
+            {executiveMembers.map((member, index) => (
+              <motion.div
+                key={member.name}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="rounded-3xl bg-white border border-gold/40 shadow-xl overflow-hidden"
+              >
+                <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch min-h-full">
+                  <div className="relative min-h-[420px] bg-gold/10">
+                    <Image
+                      src={member.image}
+                      alt={member.name}
+                      fill
+                      className="object-cover"
+                      style={{ objectPosition: member.objectPosition || "center" }}
+                      sizes="(max-width: 1280px) 100vw, 50vw"
+                    />
+                  </div>
+                  <div className="p-8 lg:p-10 bg-gradient-to-br from-white to-gold/10 flex flex-col justify-center">
+                    <p className="text-sm font-semibold uppercase tracking-widest text-gold mb-3">
+                      {index === 0 ? "Founder Spotlight" : "Chairman Spotlight"}
+                    </p>
+                    <h2 className="text-3xl font-bold text-deep-blue mb-2">{member.name}</h2>
+                    <p className="text-gold font-semibold mb-4">{member.role}</p>
+                    <p className="text-gray-700 leading-relaxed">{member.bio}</p>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <div className="mb-8 flex flex-col md:flex-row md:items-end md:justify-between gap-4">
+            <div>
+              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-gold mb-2">
+                Core Team
+              </p>
+              <h3 className="text-2xl md:text-3xl font-bold text-deep-blue">
+                The People Powering The Mission
+              </h3>
+            </div>
+            <p className="max-w-2xl text-gray-600">
+              From programs and operations to production and strategy, each member plays a vital role in advancing CDI's work.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-8">
             {otherMembers.map((member, i) => (
               <motion.div
                 key={member.name}
