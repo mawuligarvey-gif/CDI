@@ -13,6 +13,12 @@ export default function Team() {
       bio: "Award-winning filmmaker and cultural diplomat leading initiatives that empower African youth through mentorship, leadership, and entrepreneurship programs.",
     },
     {
+      name: "Alaba Adewale Adebajo",
+      role: "Chairman",
+      image: "/images/team/alaba-adebajo.jpeg",
+      bio: "A seasoned businessman, visionary leader, and ordained pastor known for bridging faith and business to drive excellence and transformation. He empowers individuals and leaders through strategic insight, strong values, and purpose-driven teachings.",
+    },
+    {
       name: "Christabel Badagbor",
       role: "Head of Operations",
       image: "/images/team/christabel-badagbor.jpeg",
