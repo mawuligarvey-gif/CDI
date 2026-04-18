@@ -210,14 +210,16 @@ and influence the world through entrepreneurship, innovation, and faith.
                 className="p-6 rounded-xl bg-white border border-gold/30 text-center hover:shadow-lg transition-all"
               >
                 <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden bg-gray-200">
-                  <Image
+                  <img
                     src={member.image}
                     alt={member.name}
+                    draggable={false}
+                    onDragStart={(e) => e.preventDefault()}
+                    onMouseDown={(e) => e.preventDefault()}
+                    className="w-full h-full object-cover"
+                    style={{ objectPosition: member.objectPosition || "center", objectFit: "cover" }}
                     width={96}
                     height={96}
-                    draggable={false}
-                    className="w-full h-full object-cover"
-                    style={{ objectPosition: member.objectPosition || "center", pointerEvents: 'none' }}
                   />
                 </div>
                 <h4 className="font-bold text-deep-blue mb-1">
@@ -265,13 +267,14 @@ and influence the world through entrepreneurship, innovation, and faith.
               </div>
               <div className="flex flex-col md:flex-row gap-6">
                 <div className="relative w-full md:w-1/3 h-64 bg-gold/10 rounded-lg overflow-hidden">
-                  <Image
+                  <img
                     src={selectedMember.image}
                     alt={selectedMember.name}
-                    fill
                     draggable={false}
-                    className="object-cover"
-                    style={{ objectPosition: selectedMember.objectPosition || "center", pointerEvents: 'none' }}
+                    onDragStart={(e) => e.preventDefault()}
+                    onMouseDown={(e) => e.preventDefault()}
+                    className="w-full h-full object-cover"
+                    style={{ objectPosition: selectedMember.objectPosition || "center", objectFit: "cover" }}
                   />
                 </div>
                 <div className="flex-1">
