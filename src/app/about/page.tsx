@@ -223,7 +223,7 @@ and influence the world through entrepreneurship, innovation, and faith.
                   <button
                     type="button"
                     onClick={() => setSelectedMember(member)}
-                    className="text-center w-full font-bold text-deep-blue hover:text-gold underline decoration-gold decoration-2 underline-offset-4 cursor-pointer transition-colors"
+                    className="text-center w-full font-bold text-deep-blue hover:text-gold cursor-pointer transition-colors"
                     aria-label={`View full bio for ${member.name}`}
                   >
                     {member.name}
