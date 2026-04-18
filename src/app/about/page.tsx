@@ -216,8 +216,16 @@ and influence the world through entrepreneurship, innovation, and faith.
                     draggable={false}
                     onDragStart={(e) => e.preventDefault()}
                     onMouseDown={(e) => e.preventDefault()}
+                    onPointerDown={(e) => e.preventDefault()}
+                    onTouchStart={(e) => e.preventDefault()}
                     className="w-full h-full object-cover"
-                    style={{ objectPosition: member.objectPosition || "center", objectFit: "cover" }}
+                    style={{
+                      objectPosition: member.objectPosition || "center",
+                      objectFit: "cover",
+                      userSelect: "none",
+                      WebkitUserDrag: "none",
+                      touchAction: "none",
+                    }}
                     width={96}
                     height={96}
                   />
@@ -273,8 +281,16 @@ and influence the world through entrepreneurship, innovation, and faith.
                     draggable={false}
                     onDragStart={(e) => e.preventDefault()}
                     onMouseDown={(e) => e.preventDefault()}
+                    onPointerDown={(e) => e.preventDefault()}
+                    onTouchStart={(e) => e.preventDefault()}
                     className="w-full h-full object-cover"
-                    style={{ objectPosition: selectedMember.objectPosition || "center", objectFit: "cover" }}
+                    style={{
+                      objectPosition: selectedMember.objectPosition || "center",
+                      objectFit: "cover",
+                      userSelect: "none",
+                      WebkitUserDrag: "none",
+                      touchAction: "none",
+                    }}
                   />
                 </div>
                 <div className="flex-1">
