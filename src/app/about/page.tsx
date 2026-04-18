@@ -217,7 +217,7 @@ and influence the world through entrepreneurship, innovation, and faith.
                     height={96}
                     draggable={false}
                     className="w-full h-full object-cover"
-                    style={{ objectPosition: member.objectPosition || "center" }}
+                    style={{ objectPosition: member.objectPosition || "center", pointerEvents: 'none' }}
                   />
                 </div>
                 <h4 className="font-bold text-deep-blue mb-1">
@@ -271,7 +271,7 @@ and influence the world through entrepreneurship, innovation, and faith.
                     fill
                     draggable={false}
                     className="object-cover"
-                    style={{ objectPosition: selectedMember.objectPosition || "center" }}
+                    style={{ objectPosition: selectedMember.objectPosition || "center", pointerEvents: 'none' }}
                   />
                 </div>
                 <div className="flex-1">

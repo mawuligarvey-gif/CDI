@@ -130,7 +130,7 @@ export default function Team() {
                         fill
                         draggable={false}
                         className="object-cover transition-transform duration-700 group-hover:scale-105"
-                        style={{ objectPosition: member.objectPosition || "center" }}
+                        style={{ objectPosition: member.objectPosition || "center", pointerEvents: 'none' }}
                         sizes="(max-width: 1280px) 100vw, 50vw"
                       />
                     </div>
@@ -161,7 +161,7 @@ export default function Team() {
                         fill
                         draggable={false}
                         className="object-cover transition-transform duration-700 group-hover:scale-105"
-                        style={{ objectPosition: member.objectPosition || "center" }}
+                        style={{ objectPosition: member.objectPosition || "center", pointerEvents: 'none' }}
                         sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
                       />
                     </div>
@@ -248,7 +248,7 @@ export default function Team() {
                     fill
                     draggable={false}
                     className="object-cover"
-                    style={{ objectPosition: selectedMember.objectPosition || "center" }}
+                    style={{ objectPosition: selectedMember.objectPosition || "center", pointerEvents: 'none' }}
                   />
                 </div>
                 <div className="flex-1">
