@@ -2,8 +2,18 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useState } from "react";
+
+type TeamMember = {
+  name: string;
+  role: string;
+  image: string;
+  bio: string;
+  objectPosition?: string;
+};
 
 export default function About() {
+  const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null);
   const team = [
     {
       name: "Kuukua Eshun",
@@ -209,14 +219,68 @@ and influence the world through entrepreneurship, innovation, and faith.
                     style={{ objectPosition: member.objectPosition || "center" }}
                   />
                 </div>
-                <h4 className="font-bold text-deep-blue mb-1">{member.name}</h4>
+                <h4 className="font-bold text-deep-blue mb-1">
+                  <button
+                    type="button"
+                    onClick={() => setSelectedMember(member)}
+                    className="text-center w-full font-bold text-deep-blue hover:text-gold underline decoration-gold decoration-2 underline-offset-4 cursor-pointer transition-colors"
+                    aria-label={`View full bio for ${member.name}`}
+                  >
+                    {member.name}
+                  </button>
+                </h4>
                 <p className="text-gold text-sm font-bold mb-3">{member.role}</p>
-                <p className="text-gray-600 text-sm">{member.bio}</p>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* Modal for full bio */}
+      {selectedMember && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
+          onClick={() => setSelectedMember(null)}
+        >
+          <motion.div
+            initial={{ scale: 0.9, opacity: 0 }}
+            animate={{ scale: 1, opacity: 1 }}
+            exit={{ scale: 0.9, opacity: 0 }}
+            className="bg-white rounded-2xl max-w-2xl w-full max-h-[90vh] overflow-y-auto"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="p-8">
+              <div className="flex justify-between items-start mb-6">
+                <h3 className="text-2xl font-bold text-deep-blue">{selectedMember.name}</h3>
+                <button
+                  onClick={() => setSelectedMember(null)}
+                  className="text-gray-400 hover:text-gray-600 text-2xl leading-none"
+                >
+                  ×
+                </button>
+              </div>
+              <div className="flex flex-col md:flex-row gap-6">
+                <div className="relative w-full md:w-1/3 h-64 bg-gold/10 rounded-lg overflow-hidden">
+                  <Image
+                    src={selectedMember.image}
+                    alt={selectedMember.name}
+                    fill
+                    className="object-cover"
+                    style={{ objectPosition: selectedMember.objectPosition || "center" }}
+                  />
+                </div>
+                <div className="flex-1">
+                  <p className="text-gold font-semibold mb-4">{selectedMember.role}</p>
+                  <p className="text-gray-700 leading-relaxed">{selectedMember.bio}</p>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </motion.div>
+      )}
     </div>
   );
 }
