@@ -215,6 +215,7 @@ and influence the world through entrepreneurship, innovation, and faith.
                     alt={member.name}
                     width={96}
                     height={96}
+                    draggable={false}
                     className="w-full h-full object-cover"
                     style={{ objectPosition: member.objectPosition || "center" }}
                   />
@@ -268,6 +269,7 @@ and influence the world through entrepreneurship, innovation, and faith.
                     src={selectedMember.image}
                     alt={selectedMember.name}
                     fill
+                    draggable={false}
                     className="object-cover"
                     style={{ objectPosition: selectedMember.objectPosition || "center" }}
                   />

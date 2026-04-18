@@ -128,6 +128,7 @@ export default function Team() {
                         src={member.image}
                         alt={member.name}
                         fill
+                        draggable={false}
                         className="object-cover transition-transform duration-700 group-hover:scale-105"
                         style={{ objectPosition: member.objectPosition || "center" }}
                         sizes="(max-width: 1280px) 100vw, 50vw"
@@ -158,6 +159,7 @@ export default function Team() {
                         src={member.image}
                         alt={member.name}
                         fill
+                        draggable={false}
                         className="object-cover transition-transform duration-700 group-hover:scale-105"
                         style={{ objectPosition: member.objectPosition || "center" }}
                         sizes="(max-width: 768px) 100vw, (max-width: 1280px) 50vw, 25vw"
@@ -244,6 +246,7 @@ export default function Team() {
                     src={selectedMember.image}
                     alt={selectedMember.name}
                     fill
+                    draggable={false}
                     className="object-cover"
                     style={{ objectPosition: selectedMember.objectPosition || "center" }}
                   />
