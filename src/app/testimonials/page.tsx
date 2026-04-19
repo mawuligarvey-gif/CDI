@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { Star, Quote } from "lucide-react";
+import DonationSection from "@/components/sections/DonationSection";
 
 export default function Testimonials() {
   const testimonials = [
@@ -166,6 +167,8 @@ export default function Testimonials() {
           </div>
         </div>
       </section>
+
+      <DonationSection />
 
       {/* CTA */}
       <section className="py-20 md:py-32">

@@ -61,7 +61,8 @@ export default function Programs() {
   };
 
   return (
-    <section className="py-20 md:py-32 bg-gradient-to-b from-white via-deep-blue/5 to-white">
+    <>
+      <section className="py-20 md:py-32 bg-gradient-to-b from-white via-deep-blue/5 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -121,8 +122,6 @@ export default function Programs() {
               {/* Hover border effect */}
               <motion.div
                 className="absolute inset-0 rounded-2xl border-2 border-gold opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none"
-                animate={{ strokeDashoffset: [0, 1000] }}
-                transition={{ duration: 3, repeat: Infinity }}
               ></motion.div>
             </motion.div>
           ))}
@@ -147,6 +146,8 @@ export default function Programs() {
           </Link>
         </motion.div>
       </div>
-    </section>
+      </section>
+      {/* <DonationSection /> */}
+    </>
   );
 }

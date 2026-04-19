@@ -18,7 +18,7 @@ export default function About() {
     {
       name: "Kuukua Eshun",
       role: "Founder &  President",
-      image: "/images/team/kuukua-eshun.jpeg",
+      image: "/images/team/kuukua-eshun.jpg",
       objectPosition: "center 20%",
       bio: "Kuukua Eshun is a Cultural Diplomat, Ghanaian-American award-winning filmmaker, global speaker,\nand the Founder and President of Cultural Diplomat Impact Organization. Her work is rooted in\nstorytelling, social impact, and global cultural exchange, using film and dialogue as tools for healing,\nadvocacy, and transformation.\nBased between Accra and Ohio, she creates emotionally resonant visual stories exploring mental\nhealth, identity, and womanhood, shaping narratives that influence cultural ecosystems globally. Her\nacclaimed film Artist, Act of Love earned Best Visual Effect at the Worldwide Women's Film Festival\nand screened at multiple Academy Award-qualifying festivals. She also directed a short film for Wizkid's\nGrammy-nominated Made in Lagos Deluxe. Her documentary Unveiling, commissioned by the ANO\nInstitute of Arts and Knowledge, premiered at the Museum Ostwall im Dortmunder U, confronting\nsexual violence through art and advocacy, while Born of the Earth debuted at the Dakar Biennale.\nThrough the Cultural Diplomat Impact Organization, Kuukua leads initiatives focused on youth\nempowerment, education, and cultural development, equipping the next generation of African leaders\nwith tools for purpose, creativity, and global relevance.\nAs a sought-after global speaker, she has engaged over 10,000 young people worldwide, using\nstorytelling, dialogue, and creative education to inspire purpose, leadership, and social responsibility.\nShe has spoken at Ashesi University, Museum Ostwall (Germany), The Ohio State University,\nUniversity of Cincinnati, Black Star Line Festival, African Contemporary Art Biennale (Senegal),\nREVOLT Summit, KNUST, TEDx Accra, University of Ghana, and the University of Professional\nStudies.\nShe is also the founder of Filming As Woman, amplifying underrepresented voices through\ncross-border creative collaborations.\nKuukua serves on the board of GIMPA, contributing to the development of a Master's program in Arts\nand Entertainment. She supports international cultural exchange initiatives with the French and\nGerman Embassies in Ghana and is a Global Ambassador for RISE Global, founded by Eric Schmidt.\nA passionate advocate for women's rights and youth opportunity, she partners with UNFPA Ghana to\nsupport survivors of sexual violence and co-creates initiatives that expand access to education,\ncreative expression, and safe spaces for young women in Ghana",
     },
@@ -209,8 +209,8 @@ and influence the world through entrepreneurship, innovation, and faith.
                 whileHover={{ y: -20 }}
                 className="p-6 rounded-xl bg-white border border-gold/30 text-center hover:shadow-lg transition-all"
               >
-                <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden bg-gray-200">
-                  <img
+                <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden bg-gray-200 relative">
+                  <Image
                     src={member.image}
                     alt={member.name}
                     draggable={false}
@@ -218,16 +218,13 @@ and influence the world through entrepreneurship, innovation, and faith.
                     onMouseDown={(e) => e.preventDefault()}
                     onPointerDown={(e) => e.preventDefault()}
                     onTouchStart={(e) => e.preventDefault()}
-                    className="w-full h-full object-cover"
+                    className="object-cover"
                     style={{
                       objectPosition: member.objectPosition || "center",
-                      objectFit: "cover",
-                      userSelect: "none",
-                      WebkitUserDrag: "none",
-                      touchAction: "none",
                     }}
-                    width={96}
-                    height={96}
+                    fill
+                    quality={100}
+                    sizes="96px"
                   />
                 </div>
                 <h4 className="font-bold text-deep-blue mb-1">
@@ -275,7 +272,7 @@ and influence the world through entrepreneurship, innovation, and faith.
               </div>
               <div className="flex flex-col md:flex-row gap-6">
                 <div className="relative w-full md:w-1/3 h-64 bg-gold/10 rounded-lg overflow-hidden">
-                  <img
+                  <Image
                     src={selectedMember.image}
                     alt={selectedMember.name}
                     draggable={false}
@@ -283,14 +280,13 @@ and influence the world through entrepreneurship, innovation, and faith.
                     onMouseDown={(e) => e.preventDefault()}
                     onPointerDown={(e) => e.preventDefault()}
                     onTouchStart={(e) => e.preventDefault()}
-                    className="w-full h-full object-cover"
+                    className="object-cover"
                     style={{
                       objectPosition: selectedMember.objectPosition || "center",
-                      objectFit: "cover",
-                      userSelect: "none",
-                      WebkitUserDrag: "none",
-                      touchAction: "none",
                     }}
+                    fill
+                    quality={100}
+                    sizes="(max-width: 768px) 100vw, 33vw"
                   />
                 </div>
                 <div className="flex-1">

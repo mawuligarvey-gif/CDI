@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { useEffect, useState } from "react";
+import DonationSection from "./DonationSection";
 
 export default function Impact() {
   const stats = [
@@ -39,7 +40,8 @@ export default function Impact() {
   };
 
   return (
-    <section className="py-20 md:py-32 bg-deep-blue relative overflow-hidden">
+    <>
+      <section className="py-20 md:py-32 bg-deep-blue relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <motion.div
@@ -132,15 +134,17 @@ export default function Impact() {
             These numbers represent real lives changed. Join us in making a difference.
           </p>
           <motion.a
-            href="#contact"
+            href="#donate"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             className="inline-block px-8 py-4 bg-gold text-deep-blue rounded-lg font-bold text-lg hover:shadow-gold transition-all cursor-pointer"
           >
-            Join the Movement
+            Donate Now
           </motion.a>
         </motion.div>
       </div>
     </section>
+      <DonationSection />
+    </>
   );
 }

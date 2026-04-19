@@ -33,9 +33,9 @@ export default function Footer() {
       { name: "Team", href: "/team" },
     ],
     Legal: [
-      { name: "Privacy Policy", href: "#" },
-      { name: "Terms", href: "#" },
-      { name: "Code of Conduct", href: "#" },
+      { name: "Privacy Policy", href: "/privacy-policy" },
+      { name: "Terms", href: "/terms" },
+      { name: "Code of Conduct", href: "/code-of-conduct" },
     ],
   };
 
@@ -134,11 +134,11 @@ export default function Footer() {
                 <span className="text-sm">theculturaldiplomats@gmail.com</span>
               </a>
               <a
-                href="tel:+233000000000"
+                href="tel:+233553586287"
                 className="flex items-center gap-2 text-gray-200 hover:text-gold transition-colors"
               >
                 <Phone size={16} />
-                <span className="text-sm">+233 (0) 000-000-000</span>
+                <span className="text-sm">+233 55 358 6287</span>
               </a>
               <div className="flex items-start gap-2 text-gray-200">
                 <MapPin size={16} className="mt-0.5 flex-shrink-0" />

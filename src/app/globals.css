@@ -16,13 +16,13 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #ffffff;
-  color: #0a1f44;
+  background-color: #eef3f6;
+  color: #303655;
 }
 
 ::selection {
-  background-color: #d4af37;
-  color: #0a1f44;
+  background-color: #6F90AF;
+  color: #ffffff;
 }
 
 /* Custom scrollbar */
@@ -31,32 +31,33 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #dfe6e8;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #d4af37;
+  background: #6F90AF;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #0a1f44;
+  background: #5c7b96;
 }
 
 /* Utility classes */
 .gradient-text {
-  background: linear-gradient(135deg, #d4af37 0%, #0a1f44 100%);
+  background: linear-gradient(135deg, #303655 0%, #84A7BA 60%, #6F90AF 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
 .glass-effect {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(191, 203, 206, 0.12);
+  -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(191, 203, 206, 0.4);
 }
 
 .shadow-gold {
-  box-shadow: 0 0 30px rgba(212, 175, 55, 0.3);
+  box-shadow: 0 0 30px rgba(111, 144, 175, 0.25);
 }

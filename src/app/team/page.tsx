@@ -19,7 +19,7 @@ export default function Team() {
     {
       name: "Kuukua Eshun",
       role: "Founder & President",
-      image: "/images/team/kuukua-eshun.jpeg",
+      image: "/images/team/kuukua-eshun.jpg",
       objectPosition: "center 20%",
       bio: "Award-winning filmmaker and cultural diplomat leading initiatives that empower African youth through mentorship, leadership, and entrepreneurship programs.",
     },
