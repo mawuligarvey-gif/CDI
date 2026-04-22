@@ -17,7 +17,7 @@ export default function Hero() {
         preload="auto"
         className="absolute inset-0 w-full h-full object-cover"
       >
-        <source src="/images/videos/herovid.mp4" type="video/mp4" />
+        <source src="/images/videos/herovideo.mp4" type="video/mp4" />
       </video>
 
       {/* Content */}

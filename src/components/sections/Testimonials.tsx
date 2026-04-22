@@ -54,7 +54,7 @@ export default function Testimonials() {
           <div className="relative w-full" style={{ paddingBottom: "56.25%" }}>
             <iframe
               className="absolute inset-0 w-full h-full"
-              source src="/images/videos/testimonies.mp4"
+              src="https://res.cloudinary.com/dovivukse/video/upload/v1776901615/impact_testimonies_pohl09.mp4"
               title="Success Stories - Cultural Diplomat Impact Organization"
               frameBorder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
