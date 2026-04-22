@@ -9,14 +9,14 @@ export default function FAQ() {
 
   const faqs = [
     {
-      question: "Who is eligible to apply for CDIO programs?",
+      question: "Who is eligible to apply for Cultural Diplomat Impact Organization programs?",
       answer:
         "We welcome applications from individuals aged 18-35 across Africa and the diaspora. You should be passionate about leadership, entrepreneurship, and community development. Basic computer literacy and English proficiency are required.",
     },
     {
       question: "Are the programs free?",
       answer:
-        "Most CDIO programs are completely free for qualified applicants. Our Leadership & Entrepreneurship Training and Mentorship Program are fully funded. The Cultural Diplomacy Internship includes a paid stipend.",
+        "Most Cultural Diplomat Impact Organization programs are completely free for qualified applicants. Our Leadership & Entrepreneurship Training and Mentorship Program are fully funded. The Cultural Diplomacy Internship includes a paid stipend.",
     },
     {
       question: "How long is the application process?",
@@ -65,7 +65,7 @@ export default function FAQ() {
               Frequently Asked Questions
             </h1>
             <p className="text-lg sm:text-xl text-gray-200">
-              Everything you need to know about CDIO
+              Everything you need to know about Cultural Diplomat Impact Organization
             </p>
           </motion.div>
         </div>

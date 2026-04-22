@@ -61,3 +61,18 @@ body {
 .shadow-gold {
   box-shadow: 0 0 30px rgba(111, 144, 175, 0.25);
 }
+
+/* Hero Background Image */
+.hero-bg-image {
+  background-image: url('/images/background.png') !important;
+  background-size: cover !important;
+  background-position: center !important;
+  background-repeat: no-repeat !important;
+  background-attachment: fixed !important;
+  background-color: transparent !important;
+}
+
+.hero-bg-overlay {
+  background-color: rgba(1, 28, 64, 0.7) !important;
+  pointer-events: none;
+}

@@ -13,8 +13,8 @@ export default function Home() {
       <About />
       <Programs />
       <Impact />
-      <Conference />
       <Testimonials />
+      <Conference />
       <CTA />
     </>
   );

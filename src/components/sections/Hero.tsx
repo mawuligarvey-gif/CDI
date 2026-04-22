@@ -17,11 +17,8 @@ export default function Hero() {
         preload="auto"
         className="absolute inset-0 w-full h-full object-cover"
       >
-        <source src="/images/videos/cdio.mp4" type="video/mp4" />
+        <source src="/images/videos/herovid.mp4" type="video/mp4" />
       </video>
-      
-      {/* Dark overlay for readability */}
-      <div className="absolute inset-0 bg-black/40"></div>
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4 md:space-y-6">
@@ -35,7 +32,7 @@ export default function Hero() {
           Raising Leaders{" "}
           <span className="inline-block">
             <motion.span
-              className="bg-gradient-to-r from-gold via-gold to-white bg-clip-text text-transparent"
+              className="bg-gradient-to-r from-accent via-accent to-highlight bg-clip-text text-transparent"
               animate={{
                 backgroundPosition: ["0%", "100%", "0%"],
               }}
@@ -45,7 +42,7 @@ export default function Hero() {
             </motion.span>
           </span>
           <br />
-          <span className="text-gold">Entrepreneurship & Education</span>
+          <span className="text-accent">Entrepreneurship & Education</span>
         </motion.h1>
 
         {/* Subheading */}
@@ -53,7 +50,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-base sm:text-lg md:text-xl text-gray-200 max-w-2xl mx-auto leading-relaxed"
+          className="text-base sm:text-lg md:text-xl text-white max-w-2xl mx-auto leading-relaxed"
         >
           Empowering the next generation of cultural leaders and innovators through mentorship, strategic training, and transformative entrepreneurship opportunities.
         </motion.p>
@@ -67,9 +64,9 @@ export default function Hero() {
         >
           <Link href="/apply">
             <motion.button
-              whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(212, 175, 55, 0.4)" }}
+              whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(167, 235, 242, 0.4)" }}
               whileTap={{ scale: 0.95 }}
-              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gold text-deep-blue rounded-lg font-bold text-base sm:text-lg hover:shadow-gold transition-all"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-accent text-white hover:bg-highlight rounded-lg font-bold text-base sm:text-lg hover:shadow-accent transition-all"
             >
               Apply Now
             </motion.button>
@@ -78,11 +75,11 @@ export default function Hero() {
             <motion.button
               whileHover={{
                 scale: 1.05,
-                borderColor: "#D4AF37",
-                backgroundColor: "rgba(212, 175, 55, 0.1)",
+                borderColor: "#A7EBF2",
+                backgroundColor: "rgba(167, 235, 242, 0.1)",
               }}
               whileTap={{ scale: 0.95 }}
-              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 border-2 border-white text-white rounded-lg font-bold text-base sm:text-lg hover:border-gold transition-all"
+              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 border-2 border-white text-white rounded-lg font-bold text-base sm:text-lg hover:border-highlight transition-all"
             >
               Partner With Us
             </motion.button>
@@ -91,7 +88,7 @@ export default function Hero() {
       </div>
 
       {/* Bottom gradient */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-primary to-transparent"></div>
     </section>
   );
 }

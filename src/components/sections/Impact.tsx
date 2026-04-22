@@ -41,7 +41,7 @@ export default function Impact() {
 
   return (
     <>
-      <section className="py-20 md:py-32 bg-deep-blue relative overflow-hidden">
+      <section className="py-20 md:py-32 bg-primary relative overflow-hidden">
       {/* Background Effects */}
       <div className="absolute inset-0">
         <motion.div
@@ -50,7 +50,7 @@ export default function Impact() {
             opacity: [0.3, 0.6, 0.3],
           }}
           transition={{ duration: 8, repeat: Infinity }}
-          className="absolute top-10 left-10 w-72 h-72 bg-gold/10 rounded-full blur-3xl"
+          className="absolute top-10 left-10 w-72 h-72 bg-accent-blue/10 rounded-full blur-3xl"
         ></motion.div>
         <motion.div
           animate={{
@@ -72,9 +72,9 @@ export default function Impact() {
           className="text-center mb-16"
         >
           <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4">
-            Our <span className="text-gold">Impact</span>
+            Our <span className="text-accent">Impact</span>
           </h2>
-          <p className="text-base sm:text-lg text-gray-200 max-w-2xl mx-auto">
+          <p className="text-base sm:text-lg text-white max-w-2xl mx-auto">
             Transforming lives across Africa through education, mentorship, and entrepreneurship.
           </p>
         </motion.div>
@@ -89,10 +89,10 @@ export default function Impact() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.15, duration: 0.6 }}
               whileHover={{ scale: 1.05 }}
-              className="p-8 rounded-2xl bg-white/5 backdrop-blur-md border border-gold/30 hover:border-gold transition-all text-center group cursor-pointer"
+              className="p-8 rounded-2xl bg-white/5 backdrop-blur-md border border-accent-blue/30 hover:border-accent-blue transition-all text-center group cursor-pointer"
             >
               {/* Icon background */}
-              <div className="w-16 h-16 bg-gold/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-gold/30 transition-all">
+              <div className="w-16 h-16 bg-accent-blue/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-accent-blue/30 transition-all">
                 <div className="text-2xl">📊</div>
               </div>
 
@@ -102,13 +102,13 @@ export default function Impact() {
                 whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15 + 0.3 }}
-                className="text-4xl font-bold text-gold mb-3"
+                className="text-4xl font-bold text-accent mb-3"
               >
                 <Counter target={stat.target} suffix={stat.suffix} prefix={stat.prefix} />
               </motion.div>
 
               {/* Label */}
-              <p className="text-gray-200 font-medium">{stat.label}</p>
+              <p className="text-white font-medium">{stat.label}</p>
 
               {/* Accent line */}
               <motion.div
@@ -116,7 +116,7 @@ export default function Impact() {
                 whileInView={{ width: "100%" }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.15 + 0.5, duration: 0.8 }}
-                className="h-1 bg-gradient-to-r from-transparent via-gold to-transparent mt-4"
+                className="h-1 bg-gradient-to-r from-transparent via-accent to-transparent mt-4"
               ></motion.div>
             </motion.div>
           ))}
@@ -130,14 +130,14 @@ export default function Impact() {
           transition={{ delay: 0.6 }}
           className="mt-16 text-center"
         >
-          <p className="text-gray-200 mb-6">
+          <p className="text-white mb-6">
             These numbers represent real lives changed. Join us in making a difference.
           </p>
           <motion.a
             href="#donate"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-block px-8 py-4 bg-gold text-deep-blue rounded-lg font-bold text-lg hover:shadow-gold transition-all cursor-pointer"
+            className="inline-block px-8 py-4 bg-secondary text-white rounded-lg font-bold text-lg hover:bg-accent transition-all cursor-pointer"
           >
             Donate Now
           </motion.a>

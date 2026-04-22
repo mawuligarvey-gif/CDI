@@ -75,23 +75,36 @@ export default function Contact() {
   return (
     <div className="pt-20 min-h-screen bg-white">
       {/* Hero */}
-      <section className="bg-deep-blue text-white py-20 md:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-center"
-          >
-            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
-              Get in <span className="text-gold">Touch</span>
-            </h1>
-            <p className="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto">
-              Have questions about our programs? Want to partner with us? We'd love to hear from you!
-            </p>
-          </motion.div>
-        </div>
-      </section>
+      <section className="relative py-20 md:py-32 text-white overflow-hidden">
+  
+  {/* Background Image */}
+  <div
+    className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+    style={{
+      backgroundImage: "url('/images/gallery/worldmap.png')",
+    }}
+  />
+
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-[#011C40]/70"></div>
+
+  {/* Content */}
+  <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8 }}
+      className="text-center"
+    >
+      <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">
+        Get in <span className="text-gold">Touch</span>
+      </h1>
+      <p className="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto">
+        Have questions about our programs? Want to partner with us? We'd love to hear from you!
+      </p>
+    </motion.div>
+  </div>
+</section>
 
       {/* Contact Section */}
       <section className="py-20 md:py-32">
@@ -235,7 +248,7 @@ export default function Contact() {
                   },
                   {
                     title: "For Partnership Opportunities",
-                    desc: "Interested in partnering with CDIO? Let's talk!",
+                    desc: "Interested in partnering with Cultural Diplomat Impact Organization? Let's talk!",
                     email: "theculturaldiplomats@gmail.com",
                   },
                   {

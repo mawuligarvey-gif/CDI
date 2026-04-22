@@ -14,7 +14,7 @@ export default function CTA() {
             opacity: [0.2, 0.4, 0.2],
           }}
           transition={{ duration: 8, repeat: Infinity }}
-          className="absolute -top-32 -right-32 w-96 h-96 bg-gold/20 rounded-full blur-3xl"
+          className="absolute -top-32 -right-32 w-96 h-96 bg-accent/20 rounded-full blur-3xl"
         ></motion.div>
         <motion.div
           animate={{
@@ -22,7 +22,7 @@ export default function CTA() {
             opacity: [0.2, 0.3, 0.2],
           }}
           transition={{ duration: 10, repeat: Infinity, delay: 2 }}
-          className="absolute -bottom-32 -left-32 w-96 h-96 bg-deep-blue/10 rounded-full blur-3xl"
+          className="absolute -bottom-32 -left-32 w-96 h-96 bg-primary/10 rounded-full blur-3xl"
         ></motion.div>
       </div>
 
@@ -42,8 +42,8 @@ export default function CTA() {
             transition={{ duration: 0.6 }}
             className="inline-block mb-6"
           >
-            <div className="px-4 py-2 rounded-full border border-gold/50 bg-gold/10 backdrop-blur-sm">
-              <span className="text-gold text-sm font-medium">
+            <div className="px-4 py-2 rounded-full border border-accent/50 bg-accent/10 backdrop-blur-sm">
+              <span className="text-accent text-sm font-medium">
                 Ready to Make a Difference? 🚀
               </span>
             </div>
@@ -55,9 +55,9 @@ export default function CTA() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-deep-blue mb-6 leading-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-primary mb-6 leading-tight"
           >
-            Join a Movement of <span className="text-gold">Purpose-Driven</span>{" "}
+            Join a Movement of <span className="text-accent">Purpose-Driven</span>{" "}
             Leaders
           </motion.h2>
 
@@ -82,9 +82,9 @@ export default function CTA() {
           >
             <Link href="/apply">
               <motion.button
-                whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(212, 175, 55, 0.4)" }}
+                whileHover={{ scale: 1.05, boxShadow: "0 0 30px rgba(0, 204, 255, 0.4)" }}
                 whileTap={{ scale: 0.95 }}
-                className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-gold text-deep-blue rounded-lg font-bold text-base sm:text-lg hover:shadow-gold transition-all"
+                className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-accent text-white hover:bg-accent rounded-lg font-bold text-base sm:text-lg hover:shadow-accent transition-all"
               >
                 Apply Now
               </motion.button>
@@ -93,11 +93,11 @@ export default function CTA() {
               <motion.button
                 whileHover={{
                   scale: 1.05,
-                  borderColor: "#D4AF37",
-                  backgroundColor: "rgba(212, 175, 55, 0.1)",
+                  borderColor: "#00CCFF",
+                  backgroundColor: "rgba(0, 204, 255, 0.1)",
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 border-2 border-deep-blue text-deep-blue rounded-lg font-bold text-base sm:text-lg hover:border-gold transition-all"
+                className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 border-2 border-primary text-primary rounded-lg font-bold text-base sm:text-lg hover:border-accent transition-all"
               >
                 Partner With Us
               </motion.button>
@@ -113,17 +113,17 @@ export default function CTA() {
             className="flex flex-col sm:flex-row justify-center gap-6 text-center"
           >
             <div className="flex flex-col items-center">
-              <p className="text-3xl font-bold text-gold mb-1">100%</p>
+              <p className="text-3xl font-bold text-accent mb-1">100%</p>
               <p className="text-sm text-gray-600">Impact-Driven</p>
             </div>
-            <div className="hidden sm:block w-px bg-gold/30"></div>
+            <div className="hidden sm:block w-px bg-accent/30"></div>
             <div className="flex flex-col items-center">
-              <p className="text-3xl font-bold text-gold mb-1">Free</p>
+              <p className="text-3xl font-bold text-accent mb-1">Free</p>
               <p className="text-sm text-gray-600">For Most Programs</p>
             </div>
-            <div className="hidden sm:block w-px bg-gold/30"></div>
+            <div className="hidden sm:block w-px bg-accent/30"></div>
             <div className="flex flex-col items-center">
-              <p className="text-3xl font-bold text-gold mb-1">1000+</p>
+              <p className="text-3xl font-bold text-accent mb-1">1000+</p>
               <p className="text-sm text-gray-600">Community Members</p>
             </div>
           </motion.div>
@@ -135,7 +135,7 @@ export default function CTA() {
           whileInView={{ scaleX: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 1, duration: 1 }}
-          className="mt-12 h-1 bg-gradient-to-r from-transparent via-gold to-transparent origin-center"
+          className="mt-12 h-1 bg-gradient-to-r from-transparent via-accent to-transparent origin-center"
         ></motion.div>
       </div>
     </section>

@@ -19,7 +19,7 @@ export default function NotFound() {
               rotate: [0, 2, -2, 0],
             }}
             transition={{ duration: 4, repeat: Infinity }}
-            className="text-9xl font-bold text-gold mb-6"
+            className="text-9xl font-bold text-accent mb-6"
           >
             404
           </motion.div>
@@ -27,7 +27,7 @@ export default function NotFound() {
           <h1 className="text-4xl md:text-5xl font-bold mb-4">
             Page Not Found
           </h1>
-          <p className="text-lg text-gray-200 mb-8 leading-relaxed">
+          <p className="text-lg text-white mb-8 leading-relaxed">
             Oops! It seems like the page you're looking for has wandered off to explore new opportunities. Let's get you back on track.
           </p>
 
@@ -37,7 +37,7 @@ export default function NotFound() {
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 bg-gold text-deep-blue rounded-lg font-bold text-lg hover:shadow-gold transition-all"
+                className="px-8 py-4 bg-secondary text-white rounded-lg font-bold text-lg hover:bg-accent transition-all"
               >
                 Go Home
               </motion.button>
@@ -46,11 +46,9 @@ export default function NotFound() {
               <motion.button
                 whileHover={{
                   scale: 1.05,
-                  borderColor: "#D4AF37",
-                  backgroundColor: "rgba(212, 175, 55, 0.1)",
                 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-8 py-4 border-2 border-white text-white rounded-lg font-bold text-lg hover:border-gold transition-all"
+                className="px-8 py-4 border-2 border-secondary text-white rounded-lg font-bold text-lg hover:border-accent transition-all"
               >
                 Contact Support
               </motion.button>
@@ -58,8 +56,8 @@ export default function NotFound() {
           </div>
 
           {/* Quick Links */}
-          <div className="p-8 rounded-2xl bg-white/10 backdrop-blur-md border border-gold/30">
-            <p className="text-sm text-gray-200 mb-4">Quick Navigation:</p>
+          <div className="p-8 rounded-2xl bg-white/10 backdrop-blur-md border border-secondary/30">
+            <p className="text-sm text-white mb-4">Quick Navigation:</p>
             <div className="flex flex-wrap gap-3 justify-center">
               {[
                 { name: "Home", href: "/" },

@@ -37,8 +37,15 @@ export default function Blog() {
   return (
     <div className="pt-20 min-h-screen bg-white">
       {/* Hero */}
-      <section className="bg-deep-blue text-white py-20 md:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 md:py-32 text-white overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('/images/gallery/worldmap.png')",
+          }}
+        />
+        <div className="absolute inset-0 bg-[#011C40]/70"></div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -46,7 +53,7 @@ export default function Blog() {
             className="text-center"
           >
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
-              CDIO <span className="text-gold">Blog</span>
+              Cultural Diplomat Impact Organization <span className="text-gold">Blog</span>
             </h1>
             <p className="text-lg sm:text-xl text-gray-200">
               Insights, stories, and inspiration for emerging leaders

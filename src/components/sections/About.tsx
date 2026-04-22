@@ -53,8 +53,8 @@ export default function About() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-deep-blue mb-4">
-            About <span className="text-gold">CDIO</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary mb-4">
+            About <span className="text-accent">Cultural Diplomat Impact Organization</span>
           </h2>
           <p className="text-base sm:text-lg text-gray-600 max-w-2xl mx-auto">
             We are a premier NGO dedicated to transforming lives through leadership, entrepreneurship, and cultural diplomacy.
@@ -85,9 +85,9 @@ export default function About() {
               <motion.div
                 animate={{
                   boxShadow: [
-                    "0 0 20px rgba(212, 175, 55, 0.5)",
-                    "0 0 40px rgba(212, 175, 55, 0.8)",
-                    "0 0 20px rgba(212, 175, 55, 0.5)",
+                    "0 0 20px rgba(167, 235, 242, 0.5)",
+                    "0 0 40px rgba(38, 101, 140, 0.8)",
+                    "0 0 20px rgba(167, 235, 242, 0.5)",
                   ],
                 }}
                 transition={{ duration: 3, repeat: Infinity }}
@@ -103,7 +103,7 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h3 className="text-2xl sm:text-3xl font-bold text-deep-blue mb-4 sm:mb-6">
+            <h3 className="text-2xl sm:text-3xl font-bold text-primary mb-4 sm:mb-6">
               Transforming Lives, Building Leaders
             </h3>
             <p className="text-gray-600 mb-4 leading-relaxed">
@@ -113,8 +113,8 @@ export default function About() {
               Through our integrated programs in mentorship, entrepreneurship training, and cultural diplomacy, we create pathways for youth to achieve their potential and contribute meaningfully to society.
             </p>
             <motion.div whileHover={{ x: 10 }} className="flex items-center gap-2">
-              <span className="text-gold font-bold">→</span>
-              <a href="/about" className="text-deep-blue font-bold hover:text-gold transition-colors">
+              <span className="text-accent font-bold">→</span>
+              <a href="/about" className="text-primary font-bold hover:text-highlight transition-colors">
                 Learn More About Us
               </a>
             </motion.div>
@@ -137,14 +137,14 @@ export default function About() {
                 variants={itemVariants}
                 whileHover={{
                   y: -10,
-                  boxShadow: "0 10px 40px rgba(212, 175, 55, 0.2)",
+                  boxShadow: "0 10px 40px rgba(167, 235, 242, 0.2)",
                 }}
-                className="p-8 rounded-2xl border border-gold/20 hover:border-gold/50 transition-all bg-white"
+                className="p-8 rounded-2xl border border-secondary/20 hover:border-secondary/50 transition-all bg-white"
               >
-                <div className="w-14 h-14 bg-gold/20 rounded-xl flex items-center justify-center mb-4">
-                  <Icon className="text-gold" size={28} />
+                <div className="w-14 h-14 bg-secondary/20 rounded-xl flex items-center justify-center mb-4">
+                  <Icon className="text-accent" size={28} />
                 </div>
-                <h4 className="text-xl font-bold text-deep-blue mb-3">
+                <h4 className="text-xl font-bold text-primary mb-3">
                   {feature.title}
                 </h4>
                 <p className="text-gray-600">{feature.description}</p>

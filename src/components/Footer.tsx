@@ -40,9 +40,9 @@ export default function Footer() {
   };
 
   return (
-    <footer className="bg-deep-blue text-white py-16 relative overflow-hidden">
+    <footer className="bg-primary text-white py-16 relative overflow-hidden">
       {/* Background decoration */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl -z-10"></div>
+      <div className="absolute top-0 right-0 w-96 h-96 bg-accent/5 rounded-full blur-3xl -z-10"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Main Footer */}
@@ -72,7 +72,7 @@ export default function Footer() {
                 />
               </motion.div>
             </Link>
-            <p className="text-gray-200 mb-6 leading-relaxed">
+            <p className="text-white mb-6 leading-relaxed">
               Raising leaders through faith, entrepreneurship, and education. Empowering the next generation of cultural leaders and innovators.
             </p>
             <div className="flex gap-4">
@@ -85,7 +85,7 @@ export default function Footer() {
                   whileHover={{ scale: 1.2 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
-                  className="w-10 h-10 bg-gold/20 hover:bg-gold hover:text-deep-blue rounded-lg flex items-center justify-center transition-colors"
+                  className="w-10 h-10 bg-accent/20 hover:bg-highlight hover:text-primary rounded-lg flex items-center justify-center transition-colors"
                 >
                   <social.icon size={20} />
                 </motion.a>
@@ -102,12 +102,12 @@ export default function Footer() {
               viewport={{ once: true }}
               transition={{ delay: idx * 0.1 }}
             >
-              <h4 className="font-bold text-gold mb-4">{category[0]}</h4>
+              <h4 className="font-bold text-accent mb-4">{category[0]}</h4>
               <ul className="space-y-2">
                 {category[1].map((link) => (
                   <li key={link.name}>
                     <Link href={link.href}>
-                      <span className="text-gray-200 hover:text-gold transition-colors text-sm cursor-pointer">
+                      <span className="text-white hover:text-highlight transition-colors text-sm cursor-pointer">
                         {link.name}
                       </span>
                     </Link>
@@ -124,23 +124,23 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
           >
-            <h4 className="font-bold text-gold mb-4">Contact</h4>
+            <h4 className="font-bold text-accent mb-4">Contact</h4>
             <div className="space-y-3">
               <a
                 href="mailto:theculturaldiplomats@gmail.com"
-                className="flex items-center gap-2 text-gray-200 hover:text-gold transition-colors"
+                className="flex items-center gap-2 text-white hover:text-highlight transition-colors"
               >
                 <Mail size={16} />
                 <span className="text-sm">theculturaldiplomats@gmail.com</span>
               </a>
               <a
                 href="tel:+233553586287"
-                className="flex items-center gap-2 text-gray-200 hover:text-gold transition-colors"
+                className="flex items-center gap-2 text-white hover:text-highlight transition-colors"
               >
                 <Phone size={16} />
                 <span className="text-sm">+233 55 358 6287</span>
               </a>
-              <div className="flex items-start gap-2 text-gray-200">
+              <div className="flex items-start gap-2 text-white">
                 <MapPin size={16} className="mt-0.5 flex-shrink-0" />
                 <span className="text-sm">Accra, Ghana</span>
               </div>
@@ -149,7 +149,7 @@ export default function Footer() {
         </div>
 
         {/* Divider */}
-        <div className="border-t border-gold/20 mb-8"></div>
+        <div className="border-t border-accent/20 mb-8"></div>
 
         {/* Bottom Footer */}
         <motion.div

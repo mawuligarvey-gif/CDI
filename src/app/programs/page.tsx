@@ -36,8 +36,15 @@ export default function Programs() {
   return (
     <div className="pt-20">
       {/* Hero */}
-      <section className="bg-gradient-to-r from-deep-blue to-deep-blue/80 text-white py-20 md:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 md:py-32 text-white overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('/images/gallery/worldmap.png')",
+          }}
+        />
+        <div className="absolute inset-0 bg-[#011C40]/70"></div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

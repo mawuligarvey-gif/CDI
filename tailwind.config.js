@@ -8,12 +8,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        gold: "#6F90AF",
-        "wild-blue-yonder": "#6F90AF",
-        "deep-blue": "#303655",
-        martinique: "#303655",
-        loblolly: "#BFCBCE",
-        nepal: "#84A7BA",
+        primary: "#011C40",
+        secondary: "#023859",
+        accent: "#26658C",
+        tertiary: "#54ACBF",
+        highlight: "#A7EBF2",
         white: "#FFFFFF",
       },
       fontFamily: {

@@ -87,7 +87,7 @@ export default function Apply() {
                 Application Submitted!
               </h1>
               <p className="text-lg text-gray-600 mb-8">
-                Thank you for your interest in CDIO. We've received your application and our team will review it carefully.
+                Thank you for your interest in Cultural Diplomat Impact Organization. We've received your application and our team will review it carefully.
               </p>
               <p className="text-gray-600 mb-12">
                 You'll receive an email confirmation shortly. Look out for our screening call within 5-7 business days.
@@ -122,8 +122,15 @@ export default function Apply() {
   return (
     <div className="pt-20 min-h-screen bg-white">
       {/* Hero */}
-      <section className="bg-deep-blue text-white py-20 md:py-32">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="relative py-20 md:py-32 text-white overflow-hidden">
+        <div
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+          style={{
+            backgroundImage: "url('/images/gallery/worldmap.png')",
+          }}
+        />
+        <div className="absolute inset-0 bg-[#011C40]/70"></div>
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -134,7 +141,7 @@ export default function Apply() {
               Apply Now
             </h1>
             <p className="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto">
-              Take the first step toward transforming your future with CDIO
+              Take the first step toward transforming your future with Cultural Diplomat Impact Organization
             </p>
           </motion.div>
         </div>
@@ -265,10 +272,11 @@ export default function Apply() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.35 }}
                 >
-                  <label className="block text-sm font-bold text-deep-blue mb-2">
+                  <label className="block text-sm font-bold text-deep-blue mb-2" htmlFor="program">
                     Program of Interest *
                   </label>
                   <select
+                    id="program"
                     name="program"
                     value={formData.program}
                     onChange={handleChange}
@@ -299,7 +307,7 @@ export default function Apply() {
                   value={formData.businessIdea}
                   onChange={handleChange}
                   required
-                  placeholder="Describe your vision, goals, and what you hope to achieve with CDIO..."
+                  placeholder="Describe your vision, goals, and what you hope to achieve with Cultural Diplomat Impact Organization..."
                   rows={5}
                   className="w-full px-4 py-3 rounded-lg border border-gold/30 focus:border-gold focus:outline-none transition-colors bg-white resize-none"
                 ></textarea>
