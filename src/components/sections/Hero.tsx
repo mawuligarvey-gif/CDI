@@ -19,9 +19,6 @@ export default function Hero() {
       >
         <source src="/images/videos/herovid.mp4" type="video/mp4" />
       </video>
-      
-      {/* Dark overlay for readability */}
-      <div className="absolute inset-0 bg-primary/40"></div>
 
       {/* Content */}
       <div className="relative z-10 max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-4 md:space-y-6">
