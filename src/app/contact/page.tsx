@@ -61,7 +61,7 @@ export default function Contact() {
     {
       icon: Phone,
       label: "Phone",
-      value: "+233 (0) 000-000-000",
+      value: "+233 55 358 6287",
       href: "tel:+233000000000",
     },
     {
