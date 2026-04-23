@@ -7,7 +7,7 @@ import DonationSection from "./DonationSection";
 export default function Impact() {
   const stats = [
     { label: "Students Impacted", target: 5000, suffix: "+" },
-    { label: "Active Programs", target: 12, suffix: "" },
+    { label: "Active Programs", target: 3, suffix: "" },
     { label: "Funding Awarded", target: 10000, suffix: " GHS", prefix: "₵" },
     { label: "Partner Organizations", target: 48, suffix: "" },
   ];

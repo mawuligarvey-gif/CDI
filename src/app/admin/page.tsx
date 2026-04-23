@@ -141,8 +141,15 @@ export default function AdminPortalPage() {
   }
 
   return (
-    <div className="min-h-screen pt-20 sm:pt-24 pb-10 sm:pb-16 bg-gradient-to-b from-white via-gold/5 to-deep-blue/5">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div className="relative min-h-screen pt-20 sm:pt-24 pb-10 sm:pb-16 text-white overflow-hidden">
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+        style={{
+          backgroundImage: "url('/images/gallery/worldmap.png')",
+        }}
+      />
+      <div className="absolute inset-0 bg-[#011C40]/70"></div>
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {!authenticated ? (
           <div className="max-w-xl mx-auto">
             <motion.div
@@ -151,16 +158,6 @@ export default function AdminPortalPage() {
               className="rounded-3xl bg-white border border-gold/30 shadow-lg overflow-hidden"
             >
               <div className="bg-deep-blue text-white px-5 py-6 sm:p-7 text-center">
-                <div className="mx-auto mb-3 w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-white/10 flex items-center justify-center">
-                  <Image
-                    src="/images/gallery/logo.png"
-                    alt="CDI Logo"
-                    width={46}
-                    height={46}
-                    className="h-auto w-10 sm:w-11"
-                    priority
-                  />
-                </div>
                 <h1 className="text-xl sm:text-2xl font-bold">CDI Admin Portal</h1>
                 <p className="text-xs sm:text-sm text-gray-200 mt-1 px-1">
                   One secure link for Blog, Programs, and Conference management.

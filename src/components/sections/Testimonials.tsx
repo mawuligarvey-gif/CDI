@@ -57,30 +57,14 @@ export default function Testimonials() {
               src="https://res.cloudinary.com/dovivukse/video/upload/v1776901615/impact_testimonies_pohl09.mp4"
               title="Success Stories - Cultural Diplomat Impact Organization"
               frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowFullScreen
+              controls
             ></iframe>
           </div>
         </motion.div>
 
-        {/* CTA Below Video */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8, delay: 0.4 }}
-          className="text-center mt-12"
-        >
-          <a href="/testimonials">
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="px-8 py-3 bg-accent text-white rounded-lg font-bold text-lg hover:bg-highlight transition-all shadow-lg"
-            >
-              View More Stories
-            </motion.button>
-          </a>
-        </motion.div>
+
       </div>
     </section>
   );

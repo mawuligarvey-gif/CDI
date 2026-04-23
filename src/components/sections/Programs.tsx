@@ -33,15 +33,6 @@ export default function Programs() {
       color: "from-tertiary/20 to-highlight/10",
       borderColor: "border-tertiary/30",
     },
-    {
-      id: 4,
-      title: "Funding Opportunities",
-      description:
-        "Access to grants and startup funding to turn your innovative business ideas into reality.",
-      icon: "💰",
-      color: "from-highlight/10 to-secondary/20",
-      borderColor: "border-highlight/30",
-    },
   ];
 
   const containerVariants = {
@@ -114,7 +105,6 @@ export default function Programs() {
                   whileHover={{ x: 5 }}
                   className="flex items-center gap-2 text-accent font-bold"
                 >
-                  <span>Learn More</span>
                   <ArrowRight size={18} />
                 </motion.div>
               </div>

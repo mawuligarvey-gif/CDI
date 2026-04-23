@@ -28,9 +28,7 @@ export default function Footer() {
     ],
     Resources: [
       { name: "Gallery", href: "/gallery" },
-      { name: "Testimonials", href: "/testimonials" },
       { name: "FAQ", href: "/faq" },
-      { name: "Team", href: "/team" },
     ],
     Legal: [
       { name: "Privacy Policy", href: "/privacy-policy" },
