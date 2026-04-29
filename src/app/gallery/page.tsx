@@ -88,7 +88,7 @@ export default function Gallery() {
             backgroundImage: "url('/images/gallery/worldmap.png')",
           }}
         />
-        <div className="absolute inset-0 bg-[#011C40]/70"></div>
+        <div className="absolute inset-0 bg-[#011C40]/50"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -122,7 +122,7 @@ export default function Gallery() {
                   setSelectedImage(i);
                   setZoom(1);
                 }}
-                className="h-64 rounded-xl bg-gradient-to-br from-gold/20 to-deep-blue/20 border-2 border-gold/30 cursor-pointer hover:shadow-2xl hover:border-gold/80 transition-all overflow-hidden group relative"
+                className="h-64 rounded-xl bg-gradient-to-br from-highlight/20 to-secondary/20 border-2 border-accent/30 cursor-pointer hover:shadow-2xl hover:border-accent/80 transition-all overflow-hidden group relative"
               >
                 <img
                   src={image.image}
@@ -147,7 +147,7 @@ export default function Gallery() {
                 onClick={loadMore}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-gradient-to-r from-gold to-yellow-500 text-deep-blue font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
+                className="bg-gradient-to-r from-tertiary to-tertiary text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center gap-2"
               >
                 <Plus size={20} />
                 Load More Images
@@ -169,23 +169,23 @@ export default function Gallery() {
           <motion.div
             initial={{ scale: 0.8, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
-            className="relative w-full max-w-3xl max-h-[75vh] flex flex-col bg-deep-blue rounded-2xl overflow-hidden"
+            className="relative w-full max-w-3xl max-h-[75vh] flex flex-col bg-primary rounded-2xl overflow-hidden"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
-            <div className="flex items-center justify-between p-4 border-b border-gold/20">
+            <div className="flex items-center justify-between p-4 border-b border-accent/20">>
               <div className="flex gap-2">
                 <button
                   onClick={() => setZoom(Math.max(1, zoom - 0.2))}
-                  className="p-2 hover:bg-gold/20 rounded-lg text-gold transition-colors"
+                  className="p-2 hover:bg-tertiary/20 rounded-lg text-tertiary transition-colors"
                   title="Zoom out"
                 >
                   <ZoomOut size={20} />
                 </button>
-                <span className="text-gold px-3 py-2">{Math.round(zoom * 100)}%</span>
+                <span className="text-tertiary px-3 py-2">{Math.round(zoom * 100)}%</span>
                 <button
                   onClick={() => setZoom(Math.min(3, zoom + 0.2))}
-                  className="p-2 hover:bg-gold/20 rounded-lg text-gold transition-colors"
+                  className="p-2 hover:bg-tertiary/20 rounded-lg text-tertiary transition-colors"
                   title="Zoom in"
                 >
                   <ZoomIn size={20} />
@@ -193,7 +193,7 @@ export default function Gallery() {
               </div>
               <button
                 onClick={() => setSelectedImage(null)}
-                className="p-2 hover:bg-gold/20 rounded-lg text-gold transition-colors"
+                className="p-2 hover:bg-tertiary/20 rounded-lg text-tertiary transition-colors"
               >
                 <X size={24} />
               </button>

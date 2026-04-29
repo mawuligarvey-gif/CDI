@@ -101,7 +101,7 @@ export default function Conference() {
             backgroundImage: "url('/images/gallery/worldmap.png')",
           }}
         />
-        <div className="absolute inset-0 bg-[#011C40]/70"></div>
+        <div className="absolute inset-0 bg-[#011C40]/50"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -141,10 +141,10 @@ export default function Conference() {
                 transition={{ delay: i * 0.1 }}
                 className="text-center"
               >
-                <div className="w-12 sm:w-16 h-12 sm:h-16 mx-auto mb-4 bg-gold/20 rounded-full flex items-center justify-center">
-                  <Icon className="text-gold" size={24} />
+                <div className="w-12 sm:w-16 h-12 sm:h-16 mx-auto mb-4 bg-highlight/20 rounded-full flex items-center justify-center">
+                  <Icon className="text-tertiary" size={24} />
                 </div>
-                <p className="text-2xl sm:text-4xl font-bold text-deep-blue mb-2">{item.label}</p>
+                <p className="text-2xl sm:text-4xl font-bold text-primary mb-2">{item.label}</p>
                 <p className="text-sm sm:text-base text-gray-600">{item.desc}</p>
               </motion.div>
             )})}
@@ -155,9 +155,9 @@ export default function Conference() {
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true }}
-            className="p-8 rounded-2xl bg-white border-2 border-gold/30"
+            className="p-8 rounded-2xl bg-white border-2 border-accent/30"
           >
-            <h3 className="text-2xl font-bold text-deep-blue mb-4">What to Expect</h3>
+            <h3 className="text-2xl font-bold text-primary mb-4">What to Expect</h3>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {conference.highlights.map((item, i) => (
                 <motion.div
@@ -168,7 +168,7 @@ export default function Conference() {
                   transition={{ delay: i * 0.05 }}
                   className="flex items-center gap-3"
                 >
-                  <span className="text-gold text-lg">✓</span>
+                  <span className="text-tertiary text-lg">✓</span>
                   <span className="text-gray-700">{item}</span>
                 </motion.div>
               ))}
@@ -186,8 +186,8 @@ export default function Conference() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-deep-blue mb-4">
-              Conference <span className="text-gold">Schedule</span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
+              Conference <span className="text-highlight">Schedule</span>
             </h2>
           </motion.div>
 
@@ -199,11 +199,11 @@ export default function Conference() {
                 whileInView={{ opacity: 1, x: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className="flex gap-6 items-start p-4 rounded-lg bg-gold/5 hover:bg-gold/10 border border-gold/30 transition-all"
+                className="flex gap-6 items-start p-4 rounded-lg bg-highlight/5 hover:bg-highlight/10 border border-accent/30 transition-all"
               >
-                <div className="flex-shrink-0 w-24 font-bold text-gold text-lg">{item.time}</div>
+                <div className="flex-shrink-0 w-24 font-bold text-tertiary text-lg">{item.time}</div>
                 <div className="flex-grow">
-                  <p className="font-bold text-deep-blue">{item.event}</p>
+                  <p className="font-bold text-primary">{item.event}</p>
                   <p className="text-sm text-gray-600">{item.hall}</p>
                 </div>
               </motion.div>
@@ -213,7 +213,7 @@ export default function Conference() {
       </section>
 
       {/* Speakers */}
-      <section className="py-20 md:py-32 bg-deep-blue/5">
+      <section className="py-20 md:py-32 bg-secondary/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -221,8 +221,8 @@ export default function Conference() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-deep-blue mb-4">
-              Featured <span className="text-gold">Speakers</span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
+              Featured <span className="text-highlight">Speakers</span>
             </h2>
           </motion.div>
 
@@ -235,11 +235,11 @@ export default function Conference() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
                 whileHover={{ y: -10 }}
-                className="p-6 rounded-2xl bg-white border border-gold/30 text-center hover:shadow-lg transition-all"
+                className="p-6 rounded-2xl bg-white border border-accent/30 text-center hover:shadow-lg transition-all"
               >
                 <div className="text-6xl mb-4">{speaker.image}</div>
-                <p className="font-bold text-deep-blue mb-1">{speaker.name}</p>
-                <p className="text-sm text-gold">{speaker.role}</p>
+                <p className="font-bold text-primary mb-1">{speaker.name}</p>
+                <p className="text-sm text-tertiary">{speaker.role}</p>
               </motion.div>
             ))}
           </div>
@@ -255,8 +255,8 @@ export default function Conference() {
               viewport={{ once: true }}
               className="text-center mb-12"
             >
-              <h2 className="text-3xl sm:text-4xl font-bold text-deep-blue mb-4">
-                Conference <span className="text-gold">Flyers</span>
+              <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
+                Conference <span className="text-highlight">Flyers</span>
               </h2>
             </motion.div>
 
@@ -268,13 +268,13 @@ export default function Conference() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.06 }}
-                  className="rounded-2xl border border-gold/30 overflow-hidden bg-white shadow-sm"
+                  className="rounded-2xl border border-accent/30 overflow-hidden bg-white shadow-sm"
                 >
                   <div className="relative h-72 bg-gray-100">
                     <Image src={flyer.imageUrl} alt={flyer.title} fill className="object-cover" />
                   </div>
                   <div className="p-4">
-                    <p className="font-semibold text-deep-blue">{flyer.title}</p>
+                    <p className="font-semibold text-primary">{flyer.title}</p>
                   </div>
                 </motion.div>
               ))}
@@ -284,7 +284,7 @@ export default function Conference() {
       )}
 
       {/* Registration CTA */}
-      <section className="py-20 md:py-32 bg-deep-blue text-white">
+      <section className="py-20 md:py-32 bg-primary text-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
@@ -304,7 +304,7 @@ export default function Conference() {
             href={conference.ctaHref}
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
-            className="inline-block px-8 py-4 bg-gold text-deep-blue rounded-lg font-bold text-lg hover:shadow-gold transition-all cursor-pointer"
+            className="inline-block px-8 py-4 bg-tertiary text-white rounded-lg font-bold text-lg hover:shadow-lg transition-all cursor-pointer"
           >
             {conference.ctaButtonText}
           </motion.a>

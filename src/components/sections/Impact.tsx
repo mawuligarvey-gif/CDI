@@ -50,7 +50,7 @@ export default function Impact() {
             opacity: [0.3, 0.6, 0.3],
           }}
           transition={{ duration: 8, repeat: Infinity }}
-          className="absolute top-10 left-10 w-72 h-72 bg-accent-blue/10 rounded-full blur-3xl"
+          className="absolute top-10 left-10 w-72 h-72 bg-secondary/10 rounded-full blur-3xl"
         ></motion.div>
         <motion.div
           animate={{
@@ -89,10 +89,10 @@ export default function Impact() {
               viewport={{ once: true }}
               transition={{ delay: i * 0.15, duration: 0.6 }}
               whileHover={{ scale: 1.05 }}
-              className="p-8 rounded-2xl bg-white/5 backdrop-blur-md border border-accent-blue/30 hover:border-accent-blue transition-all text-center group cursor-pointer"
+              className="p-8 rounded-2xl bg-white/5 backdrop-blur-md border border-secondary/30 hover:border-secondary transition-all text-center group cursor-pointer"
             >
               {/* Icon background */}
-              <div className="w-16 h-16 bg-accent-blue/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-accent-blue/30 transition-all">
+              <div className="w-16 h-16 bg-secondary/20 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-secondary/30 transition-all">
                 <div className="text-2xl">📊</div>
               </div>
 

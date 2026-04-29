@@ -79,11 +79,11 @@ export default function Apply() {
               <motion.div
                 animate={{ scale: [1, 1.1, 1] }}
                 transition={{ duration: 1 }}
-                className="w-20 h-20 mx-auto mb-6 rounded-full bg-gold/20 flex items-center justify-center"
+                className="w-20 h-20 mx-auto mb-6 rounded-full bg-highlight/20 flex items-center justify-center"
               >
-                <CheckCircle size={48} className="text-gold" />
+                <CheckCircle size={48} className="text-tertiary" />
               </motion.div>
-              <h1 className="text-4xl md:text-5xl font-bold text-deep-blue mb-4">
+              <h1 className="text-4xl md:text-5xl font-bold text-primary mb-4">
                 Application Submitted!
               </h1>
               <p className="text-lg text-gray-600 mb-8">
@@ -98,7 +98,7 @@ export default function Apply() {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                   onClick={resetForm}
-                  className="block w-full px-8 py-4 bg-gold text-deep-blue rounded-lg font-bold hover:shadow-lg transition-all"
+                  className="block w-full px-8 py-4 bg-tertiary text-white rounded-lg font-bold hover:shadow-lg transition-all"
                 >
                   Submit Another Application
                 </motion.button>
@@ -106,7 +106,7 @@ export default function Apply() {
                   <motion.button
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
-                    className="block w-full px-8 py-4 border-2 border-deep-blue text-deep-blue rounded-lg font-bold hover:bg-deep-blue/5 transition-all"
+                    className="block w-full px-8 py-4 border-2 border-primary text-primary rounded-lg font-bold hover:bg-primary/5 transition-all"
                   >
                     Back to Home
                   </motion.button>
@@ -129,7 +129,7 @@ export default function Apply() {
             backgroundImage: "url('/images/gallery/worldmap.png')",
           }}
         />
-        <div className="absolute inset-0 bg-[#011C40]/70"></div>
+        <div className="absolute inset-0 bg-[#011C40]/50"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -155,7 +155,7 @@ export default function Apply() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
-            className="p-8 md:p-12 rounded-2xl bg-gradient-to-br from-gold/5 to-deep-blue/5 border border-gold/30"
+            className="p-8 md:p-12 rounded-2xl bg-gradient-to-br from-highlight/5 to-secondary/5 border border-accent/30"
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Name Fields */}
@@ -166,7 +166,7 @@ export default function Apply() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.1 }}
                 >
-                  <label className="block text-sm font-bold text-deep-blue mb-2">
+                  <label className="block text-sm font-bold text-primary mb-2">
                     First Name *
                   </label>
                   <input
@@ -176,7 +176,7 @@ export default function Apply() {
                     onChange={handleChange}
                     required
                     placeholder="Your first name"
-                    className="w-full px-4 py-3 rounded-lg border border-gold/30 focus:border-gold focus:outline-none transition-colors bg-white"
+                    className="w-full px-4 py-3 rounded-lg border border-accent/30 focus:border-accent focus:outline-none transition-colors bg-white"
                   />
                 </motion.div>
 
@@ -186,7 +186,7 @@ export default function Apply() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.15 }}
                 >
-                  <label className="block text-sm font-bold text-deep-blue mb-2">
+                  <label className="block text-sm font-bold text-primary mb-2">
                     Last Name *
                   </label>
                   <input
@@ -196,7 +196,7 @@ export default function Apply() {
                     onChange={handleChange}
                     required
                     placeholder="Your last name"
-                    className="w-full px-4 py-3 rounded-lg border border-gold/30 focus:border-gold focus:outline-none transition-colors bg-white"
+                    className="w-full px-4 py-3 rounded-lg border border-accent/30 focus:border-tertiary focus:outline-none transition-colors bg-white"
                   />
                 </motion.div>
               </div>
@@ -209,17 +209,17 @@ export default function Apply() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.2 }}
                 >
-                  <label className="block text-sm font-bold text-deep-blue mb-2">
+                  <label className="block text-sm font-bold text-primary mb-2">
                     Email *
                   </label>
                   <input
                     type="email"
                     name="email"
-                    value={formData.email}
+                    value={form.email}
                     onChange={handleChange}
                     required
-                    placeholder="your.email@example.com"
-                    className="w-full px-4 py-3 rounded-lg border border-gold/30 focus:border-gold focus:outline-none transition-colors bg-white"
+                    placeholder="your@email.com"
+                    className="w-full px-4 py-3 rounded-lg border border-accent/30 focus:border-tertiary focus:outline-none transition-colors bg-white"
                   />
                 </motion.div>
 
@@ -229,7 +229,7 @@ export default function Apply() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.25 }}
                 >
-                  <label className="block text-sm font-bold text-deep-blue mb-2">
+                  <label className="block text-sm font-bold text-primary mb-2">
                     Phone Number *
                   </label>
                   <input
@@ -239,7 +239,7 @@ export default function Apply() {
                     onChange={handleChange}
                     required
                     placeholder="+233 (0) 000-000-000"
-                    className="w-full px-4 py-3 rounded-lg border border-gold/30 focus:border-gold focus:outline-none transition-colors bg-white"
+                    className="w-full px-4 py-3 rounded-lg border border-accent/30 focus:border-tertiary focus:outline-none transition-colors bg-white"
                   />
                 </motion.div>
               </div>
@@ -252,7 +252,7 @@ export default function Apply() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.3 }}
                 >
-                  <label className="block text-sm font-bold text-deep-blue mb-2">
+                  <label className="block text-sm font-bold text-primary mb-2">
                     School/University
                   </label>
                   <input
@@ -262,7 +262,7 @@ export default function Apply() {
                     onChange={handleChange}
                     required
                     placeholder="Your school or university"
-                    className="w-full px-4 py-3 rounded-lg border border-gold/30 focus:border-gold focus:outline-none transition-colors bg-white"
+                    className="w-full px-4 py-3 rounded-lg border border-accent/30 focus:border-tertiary focus:outline-none transition-colors bg-white"
                   />
                 </motion.div>
 
@@ -272,7 +272,7 @@ export default function Apply() {
                   viewport={{ once: true }}
                   transition={{ delay: 0.35 }}
                 >
-                  <label className="block text-sm font-bold text-deep-blue mb-2" htmlFor="program">
+                  <label className="block text-sm font-bold text-primary mb-2" htmlFor="program">
                     Program of Interest *
                   </label>
                   <select
@@ -281,7 +281,7 @@ export default function Apply() {
                     value={formData.program}
                     onChange={handleChange}
                     required
-                    className="w-full px-4 py-3 rounded-lg border border-gold/30 focus:border-gold focus:outline-none transition-colors bg-white"
+                    className="w-full px-4 py-3 rounded-lg border border-accent/30 focus:border-tertiary focus:outline-none transition-colors bg-white"
                   >
                     <option value="">Select a program</option>
                     <option value="leadership">Leadership & Entrepreneurship Training</option>
@@ -299,7 +299,7 @@ export default function Apply() {
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
               >
-                <label className="block text-sm font-bold text-deep-blue mb-2">
+                <label className="block text-sm font-bold text-primary mb-2">
                   Tell us about your business idea or aspirations *
                 </label>
                 <textarea
@@ -309,7 +309,7 @@ export default function Apply() {
                   required
                   placeholder="Describe your vision, goals, and what you hope to achieve with Cultural Diplomat Impact Organization..."
                   rows={5}
-                  className="w-full px-4 py-3 rounded-lg border border-gold/30 focus:border-gold focus:outline-none transition-colors bg-white resize-none"
+                  className="w-full px-4 py-3 rounded-lg border border-accent/30 focus:border-accent focus:outline-none transition-colors bg-white resize-none"
                 ></textarea>
               </motion.div>
 
@@ -326,11 +326,11 @@ export default function Apply() {
                   whileTap={{ scale: loading ? 1 : 0.95 }}
                   type="submit"
                   disabled={loading}
-                  className="w-full px-8 py-4 bg-gold text-deep-blue rounded-lg font-bold text-lg hover:shadow-gold transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+                  className="w-full px-8 py-4 bg-tertiary text-white rounded-lg font-bold text-lg hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed"
                 >
                   {loading ? (
                     <span className="flex items-center justify-center gap-2">
-                      <div className="w-5 h-5 border-2 border-deep-blue border-t-transparent rounded-full animate-spin"></div>
+                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                       Submitting...
                     </span>
                   ) : (

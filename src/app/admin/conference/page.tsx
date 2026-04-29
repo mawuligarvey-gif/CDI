@@ -219,15 +219,15 @@ export default function ConferenceAdminPage() {
   return (
     <div className="min-h-screen bg-white pt-24 pb-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-3xl font-bold text-deep-blue mb-2">Conference Admin</h1>
+        <h1 className="text-3xl font-bold text-primary mb-2">Conference Admin</h1>
         <p className="text-gray-600 mb-6">Update conference details and upload event flyers.</p>
 
         {!authenticated ? (
-          <div className="max-w-md bg-white border border-gold/30 rounded-2xl p-6 shadow-sm">
-            <h2 className="text-xl font-bold text-deep-blue mb-4">Sign In</h2>
+          <div className="max-w-md bg-white border border-accent/30 rounded-2xl p-6 shadow-sm">
+            <h2 className="text-xl font-bold text-primary mb-4">Sign In</h2>
             <form onSubmit={handleLogin} className="space-y-4">
               <div>
-                <label className="block text-sm font-semibold text-deep-blue mb-1">Admin Password</label>
+                <label className="block text-sm font-semibold text-primary mb-1">Admin Password</label>
                 <input
                   type="password"
                   value={password}
@@ -239,7 +239,7 @@ export default function ConferenceAdminPage() {
                 />
               </div>
               {error && <p className="text-sm text-red-600">{error}</p>}
-              <button type="submit" className="w-full px-4 py-2 rounded-lg bg-gold text-deep-blue font-bold">
+              <button type="submit" className="w-full px-4 py-2 rounded-lg bg-tertiary text-white font-bold">
                 Login
               </button>
             </form>
@@ -248,8 +248,8 @@ export default function ConferenceAdminPage() {
           <div>Loading conference content...</div>
         ) : (
           <form onSubmit={handleSave} className="space-y-8">
-            <div className="rounded-2xl border border-gold/30 p-6 bg-gold/5 space-y-4">
-              <h2 className="text-xl font-bold text-deep-blue">Hero Content</h2>
+            <div className="rounded-2xl border border-accent/30 p-6 bg-highlight/5 space-y-4">
+              <h2 className="text-xl font-bold text-primary">Hero Content</h2>
               <input
                 value={content.title}
                 onChange={(e) => setContent((current) => ({ ...current, title: e.target.value }))}
@@ -273,8 +273,8 @@ export default function ConferenceAdminPage() {
               />
             </div>
 
-            <div className="rounded-2xl border border-gold/30 p-6 bg-white space-y-4">
-              <h2 className="text-xl font-bold text-deep-blue">Conference Details</h2>
+            <div className="rounded-2xl border border-accent/30 p-6 bg-white space-y-4">
+              <h2 className="text-xl font-bold text-primary">Conference Details</h2>
               <textarea
                 value={highlightsText}
                 onChange={(e) =>
@@ -327,8 +327,8 @@ export default function ConferenceAdminPage() {
               />
             </div>
 
-            <div className="rounded-2xl border border-gold/30 p-6 bg-gold/5 space-y-4">
-              <h2 className="text-xl font-bold text-deep-blue">Conference Flyers</h2>
+            <div className="rounded-2xl border border-accent/30 p-6 bg-highlight/5 space-y-4">
+              <h2 className="text-xl font-bold text-primary">Conference Flyers</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-3 items-end">
                 <input
                   value={flyerTitle}
@@ -348,7 +348,7 @@ export default function ConferenceAdminPage() {
                   type="button"
                   onClick={handleUploadFlyer}
                   disabled={uploadingFlyer}
-                  className="px-4 py-2 rounded-lg bg-deep-blue text-white font-semibold disabled:opacity-60"
+                  className="px-4 py-2 rounded-lg bg-primary text-white font-semibold disabled:opacity-60"
                 >
                   {uploadingFlyer ? "Uploading..." : "Upload Flyer"}
                 </button>
@@ -356,11 +356,11 @@ export default function ConferenceAdminPage() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
                 {content.flyers.map((flyer, index) => (
-                  <div key={`${flyer.imageUrl}-${index}`} className="rounded-xl border border-gold/30 bg-white p-3">
+                  <div key={`${flyer.imageUrl}-${index}`} className="rounded-xl border border-accent/30 bg-white p-3">
                     <div className="relative h-40 rounded-lg overflow-hidden bg-gray-100">
                       <Image src={flyer.imageUrl} alt={flyer.title} fill className="object-cover" />
                     </div>
-                    <p className="text-sm font-semibold text-deep-blue mt-2">{flyer.title}</p>
+                    <p className="text-sm font-semibold text-primary mt-2">{flyer.title}</p>
                     <button
                       type="button"
                       onClick={() =>
@@ -378,8 +378,8 @@ export default function ConferenceAdminPage() {
               </div>
             </div>
 
-            <div className="rounded-2xl border border-gold/30 p-6 bg-white space-y-3">
-              <h2 className="text-xl font-bold text-deep-blue">Call To Action</h2>
+            <div className="rounded-2xl border border-accent/30 p-6 bg-white space-y-3">
+              <h2 className="text-xl font-bold text-primary">Call To Action</h2>
               <input
                 value={content.ctaTitle}
                 onChange={(e) => setContent((current) => ({ ...current, ctaTitle: e.target.value }))}
@@ -416,7 +416,7 @@ export default function ConferenceAdminPage() {
               <button
                 type="submit"
                 disabled={saving}
-                className="px-6 py-2 rounded-lg bg-gold text-deep-blue font-bold disabled:opacity-60"
+                className="px-6 py-2 rounded-lg bg-tertiary text-white font-bold disabled:opacity-60"
               >
                 {saving ? "Saving..." : "Save Conference Content"}
               </button>

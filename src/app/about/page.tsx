@@ -23,7 +23,7 @@ export default function About() {
       bio: "Kuukua Eshun is a Cultural Diplomat, Ghanaian-American award-winning filmmaker, global speaker,\nand the Founder and President of Cultural Diplomat Impact Organization. Her work is rooted in\nstorytelling, social impact, and global cultural exchange, using film and dialogue as tools for healing,\nadvocacy, and transformation.\nBased between Accra and Ohio, she creates emotionally resonant visual stories exploring mental\nhealth, identity, and womanhood, shaping narratives that influence cultural ecosystems globally. Her\nacclaimed film Artist, Act of Love earned Best Visual Effect at the Worldwide Women's Film Festival\nand screened at multiple Academy Award-qualifying festivals. She also directed a short film for Wizkid's\nGrammy-nominated Made in Lagos Deluxe. Her documentary Unveiling, commissioned by the ANO\nInstitute of Arts and Knowledge, premiered at the Museum Ostwall im Dortmunder U, confronting\nsexual violence through art and advocacy, while Born of the Earth debuted at the Dakar Biennale.\nThrough the Cultural Diplomat Impact Organization, Kuukua leads initiatives focused on youth\nempowerment, education, and cultural development, equipping the next generation of African leaders\nwith tools for purpose, creativity, and global relevance.\nAs a sought-after global speaker, she has engaged over 10,000 young people worldwide, using\nstorytelling, dialogue, and creative education to inspire purpose, leadership, and social responsibility.\nShe has spoken at Ashesi University, Museum Ostwall (Germany), The Ohio State University,\nUniversity of Cincinnati, Black Star Line Festival, African Contemporary Art Biennale (Senegal),\nREVOLT Summit, KNUST, TEDx Accra, University of Ghana, and the University of Professional\nStudies.\nShe is also the founder of Filming As Woman, amplifying underrepresented voices through\ncross-border creative collaborations.\nKuukua serves on the board of GIMPA, contributing to the development of a Master's program in Arts\nand Entertainment. She supports international cultural exchange initiatives with the French and\nGerman Embassies in Ghana and is a Global Ambassador for RISE Global, founded by Eric Schmidt.\nA passionate advocate for women's rights and youth opportunity, she partners with UNFPA Ghana to\nsupport survivors of sexual violence and co-creates initiatives that expand access to education,\ncreative expression, and safe spaces for young women in Ghana",
     },
     {
-      name: "Alaba Adewale Adebajo",
+      name: "Ade Adebajo",
       role: "Chairman",
       image: "/images/team/alaba-adewale.jpeg",
       objectPosition: "center 12%",
@@ -61,7 +61,7 @@ export default function About() {
       role: "Head of Production",
       image: "/images/team/emmanuel-selormey.png",
       objectPosition: "center 15%",
-      bio: "Emmanuel Selormey, popularly known as Selorm, is a Ghanaian filmmaker, producer, and media entrepreneur who works \nacross video direc ng, anima on, photography, cinematography (DOP), edi ng, and crea ve storytelling. He is the \nfounder of Synma on Studios, a media produc on company built on the idea of telling meaningful visual stories for brands, \nins tu ons, and cultural ini a ves. \nHis journey in film and media began with curiosity and hands-on experience, which later grew into formal training at the \nNa onal Film and Television Ins tute (NAFTI) in Ghana. There, he built a strong founda on in filmmaking, storytelling, and \nvisual communica on, shaping the way he approaches every project today. \nOver the years, Selorm has grown into a producer who leads with trust, consistency, and responsibility, working across \nboth commercial and ins tu onal spaces. He currently serves as the Head of Produc on at Cultural Diplomat Impact \nOrganization, where he leads produc on work centered on cultural exchange, iden ty, and impact driven storytelling. \nHe also works as the Produc on Lead at Mega6 Games and serves as a Video Produc on Consultant for the Securi es and \nExchange Commission, suppor ng visual communica on and ins tu onal storytelling. \nSelorm has collaborated with crea ve agencies such as Empire Ghana and iD8, contribu ng to major campaigns including \nTotalEnergies projects and Enterprise Insurance television commercials. His work also includes a television commercial \nfor Kibo, as well as documentary produc ons for the Ministry of Energy and the Ministry of Finance, helping translate \nimportant na onal stories into visual form. \nAlongside tradi onal produc on work, Selorm has also developed strong skills in AI driven image and video crea on, using \nmodern tools to support crea ve development, experimenta on, and produc on efficiency while maintaining storytelling \nquality. \nHe is widely known not just for his work, but for the trust he builds with people and ins tu ons, and the calm, reliable way \nhe delivers even under pressure. He is also a fast learner, constantly growing, adap ng, and refining his cra in a fast \nchanging crea ve world. \nAt the heart of everything he does is a simple belief: storytelling should mean something. His work is driven by a desire to \ncreate honest, human, and impac ul visual stories that connect people, reflect culture, and leave a las ng feeling long \na er the screen fades.",
+      bio: "Emmanuel Selormey, popularly known as Selorm, is a Ghanaian filmmaker, producer, and media entrepreneur who works across video direction, animation, photography, cinematography (DOP), editing, and creative storytelling. He is the \nfounder of Synma on Studios, a media production company built on the idea of telling meaningful visual stories for brands, \ninstitutions, and cultural initiatives. \nHis journey in film and media began with curiosity and hands-on experience, which later grew into formal training at the \nNational Film and Television Institute (NAFTI) in Ghana. There, he built a strong foundation in filmmaking, storytelling, and \nvisual communication, shaping the way he approaches every project today. \nOver the years, Selorm has grown into a producer who leads with trust, consistency, and responsibility, working across \nboth commercial and institutional spaces. He currently serves as the Head of Production at Cultural Diplomat Impact \nOrganization, where he leads production work centered on cultural exchange, identity, and impact driven storytelling. \nHe also works as the Production Lead at Mega6 Games and serves as a Video Production Consultant for the Services and \nExchange Commission, supporting visual communication and institutional storytelling. \nSelorm has collaborated with creative agencies such as Empire Ghana and iD8, contributing to major campaigns including \nTotalEnergies projects and Enterprise Insurance television commercials. His work also includes a television commercial \nfor Kibo, as well as documentary productions for the Ministry of Energy and the Ministry of Finance, helping translate \nimportant national stories into visual form. \nAlongside traditional production work, Selorm has also developed strong skills in AI driven image and video creation, using \nmodern tools to support creative development, experimentation, and production efficiency while maintaining storytelling \nquality. \nHe is widely known not just for his work, but for the trust he builds with people and institutions, and the calm, reliable way \nhe delivers even under pressure. He is also a fast learner, constantly growing, adapting, and refining his craft in a fast \nchanging creative world. \nAt the heart of everything he does is a simple belief: storytelling should mean something. His work is driven by a desire to \ncreate honest, human, and impactful visual stories that connect people, reflect culture, and leave a lasting feeling long \nafter the screen fades.",
     },
 
   ];
@@ -76,7 +76,7 @@ export default function About() {
             backgroundImage: "url('/images/gallery/worldmap.png')",
           }}
         />
-        <div className="absolute inset-0 bg-[#011C40]/70"></div>
+        <div className="absolute inset-0 bg-[#011C40]/50"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -85,7 +85,7 @@ export default function About() {
             className="text-center"
           >
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
-              About <span className="text-gold">Cultural Diplomat Impact Organization</span>
+              About <span className="text-highlight">Cultural Diplomat Impact Organization</span>
             </h1>
             <p className="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto">
               Building tomorrow's leaders with faith, innovation, and purpose
@@ -104,9 +104,9 @@ export default function About() {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="p-8 rounded-2xl border-2 border-gold/30 bg-gold/5"
+              className="p-8 rounded-2xl border-2 border-highlight/30 bg-highlight/5"
             >
-            <h3 className="text-2xl sm:text-3xl font-bold text-deep-blue mb-4">
+            <h3 className="text-2xl sm:text-3xl font-bold text-primary mb-4">
               Our Mission
             </h3>
             <p className="text-gray-600 leading-relaxed">
@@ -121,9 +121,9 @@ leadership development.
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="p-8 rounded-2xl border-2 border-gold/30 bg-gold/5"
+              className="p-8 rounded-2xl border-2 border-highlight/30 bg-highlight/5"
             >
-              <h3 className="text-2xl sm:text-3xl font-bold text-deep-blue mb-4">
+              <h3 className="text-2xl sm:text-3xl font-bold text-primary mb-4">
                 Our Vision
               </h3>
               <p className="text-gray-600 leading-relaxed">
@@ -141,8 +141,8 @@ and influence the world through entrepreneurship, innovation, and faith.
             transition={{ duration: 0.8, delay: 0.2 }}
             className="mt-16 text-center"
           >
-            <h3 className="text-2xl sm:text-3xl font-bold text-deep-blue mb-6">
-              Our <span className="text-gold">Story</span>
+            <h3 className="text-2xl sm:text-3xl font-bold text-primary mb-6">
+              Our <span className="text-highlight">Story</span>
             </h3>
             <p className="text-lg text-gray-700 leading-relaxed max-w-3xl mx-auto">
               Founded in 2026, Cultural Diplomat Impact Organization was established with a vision to empower young leaders through faith-based mentorship,
@@ -158,8 +158,8 @@ and influence the world through entrepreneurship, innovation, and faith.
             transition={{ duration: 0.8 }}
             className="text-center mb-12"
           >
-            <h3 className="text-3xl sm:text-4xl font-bold text-deep-blue mb-6">
-              Our <span className="text-gold">Values</span>
+            <h3 className="text-3xl sm:text-4xl font-bold text-primary mb-6">
+              Our <span className="text-highlight">Values</span>
             </h3>
           </motion.div>
 
@@ -177,10 +177,10 @@ and influence the world through entrepreneurship, innovation, and faith.
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
                 whileHover={{ y: -10 }}
-                className="p-6 rounded-xl bg-gold/10 border border-gold/30 text-center hover:shadow-lg transition-all"
+                className="p-6 rounded-xl bg-highlight/10 border border-highlight/30 text-center hover:shadow-lg transition-all"
               >
                 <div className="text-4xl mb-3">{value.icon}</div>
-                <h4 className="font-bold text-deep-blue mb-2">{value.title}</h4>
+                <h4 className="font-bold text-primary mb-2">{value.title}</h4>
                 <p className="text-sm text-gray-600">{value.desc}</p>
               </motion.div>
             ))}
@@ -189,7 +189,7 @@ and influence the world through entrepreneurship, innovation, and faith.
       </section>
 
       {/* Leadership Team */}
-      <section className="py-20 md:py-32 bg-deep-blue/5">
+      <section className="py-20 md:py-32 bg-secondary/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -197,8 +197,8 @@ and influence the world through entrepreneurship, innovation, and faith.
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-deep-blue mb-4">
-              Meet Our <span className="text-gold">Leadership Team</span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
+              Meet Our <span className="text-highlight">Leadership Team</span>
             </h2>
             <p className="text-gray-600">
               Experienced leaders dedicated to your success
@@ -214,7 +214,7 @@ and influence the world through entrepreneurship, innovation, and faith.
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
                 whileHover={{ y: -20 }}
-                className="p-6 rounded-xl bg-white border border-gold/30 text-center hover:shadow-lg transition-all"
+                className="p-6 rounded-xl bg-white border border-accent/30 text-center hover:shadow-lg transition-all"
               >
                 <div className="w-24 h-24 mx-auto mb-4 rounded-full overflow-hidden bg-gray-200 relative">
                   <Image
@@ -234,17 +234,17 @@ and influence the world through entrepreneurship, innovation, and faith.
                     sizes="96px"
                   />
                 </div>
-                <h4 className="font-bold text-deep-blue mb-1">
+                <h4 className="font-bold text-primary mb-1">
                   <button
                     type="button"
                     onClick={() => setSelectedMember(member)}
-                    className="text-center w-full font-bold text-deep-blue hover:text-gold cursor-pointer transition-colors"
+                    className="text-center w-full font-bold text-primary hover:text-tertiary cursor-pointer transition-colors"
                     aria-label={`View full bio for ${member.name}`}
                   >
                     {member.name}
                   </button>
                 </h4>
-                <p className="text-gold text-sm font-bold mb-3">{member.role}</p>
+                <p className="text-tertiary text-sm font-bold mb-3">{member.role}</p>
               </motion.div>
             ))}
           </div>
@@ -269,7 +269,7 @@ and influence the world through entrepreneurship, innovation, and faith.
           >
             <div className="p-8">
               <div className="flex justify-between items-start mb-6">
-                <h3 className="text-2xl font-bold text-deep-blue">{selectedMember.name}</h3>
+                <h3 className="text-2xl font-bold text-primary">{selectedMember.name}</h3>
                 <button
                   onClick={() => setSelectedMember(null)}
                   className="text-gray-400 hover:text-gray-600 text-2xl leading-none"
@@ -278,7 +278,7 @@ and influence the world through entrepreneurship, innovation, and faith.
                 </button>
               </div>
               <div className="flex flex-col md:flex-row gap-6">
-                <div className="relative w-full md:w-1/3 h-64 bg-gold/10 rounded-lg overflow-hidden">
+                <div className="relative w-full md:w-1/3 h-64 bg-highlight/10 rounded-lg overflow-hidden">
                   <Image
                     src={selectedMember.image}
                     alt={selectedMember.name}
@@ -297,7 +297,7 @@ and influence the world through entrepreneurship, innovation, and faith.
                   />
                 </div>
                 <div className="flex-1">
-                  <p className="text-gold font-semibold mb-4">{selectedMember.role}</p>
+                  <p className="text-tertiary font-semibold mb-4">{selectedMember.role}</p>
                   <p className="text-gray-700 leading-relaxed">{selectedMember.bio}</p>
                 </div>
               </div>

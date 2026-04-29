@@ -44,7 +44,7 @@ export default function Blog() {
             backgroundImage: "url('/images/gallery/worldmap.png')",
           }}
         />
-        <div className="absolute inset-0 bg-[#011C40]/70"></div>
+        <div className="absolute inset-0 bg-[#011C40]/50"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -53,7 +53,7 @@ export default function Blog() {
             className="text-center"
           >
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
-              Cultural Diplomat Impact Organization <span className="text-gold">Blog</span>
+              Cultural Diplomat Impact Organization <span className="text-highlight">Blog</span>
             </h1>
             <p className="text-lg sm:text-xl text-gray-200">
               Insights, stories, and inspiration for emerging leaders
@@ -74,10 +74,10 @@ export default function Blog() {
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
                 whileHover={{ y: -10 }}
-                className="rounded-2xl bg-white border border-gold/30 hover:border-gold/60 overflow-hidden hover:shadow-lg transition-all cursor-pointer"
+                className="rounded-2xl bg-white border border-accent/30 hover:border-accent/60 overflow-hidden hover:shadow-lg transition-all cursor-pointer"
               >
                 {/* Image */}
-                <div className="h-48 bg-gradient-to-br from-gold/20 to-deep-blue/20 flex items-center justify-center text-6xl hover:scale-110 transition-transform">
+                <div className="h-48 bg-gradient-to-br from-highlight/20 to-secondary/20 flex items-center justify-center text-6xl hover:scale-110 transition-transform">
                   {post.image}
                 </div>
 
@@ -85,13 +85,13 @@ export default function Blog() {
                 <div className="p-6">
                   {/* Category */}
                   <div className="mb-3">
-                    <span className="inline-block px-3 py-1 bg-gold/20 text-gold text-xs font-bold rounded-full">
+                    <span className="inline-block px-3 py-1 bg-highlight/20 text-tertiary text-xs font-bold rounded-full">
                       {post.category}
                     </span>
                   </div>
 
                   {/* Title */}
-                  <h3 className="text-xl font-bold text-deep-blue mb-2 line-clamp-2">
+                  <h3 className="text-xl font-bold text-primary mb-2 line-clamp-2">
                     {post.title}
                   </h3>
 
@@ -101,7 +101,7 @@ export default function Blog() {
                   </p>
 
                   {/* Meta */}
-                  <div className="flex items-center gap-4 text-xs text-gray-500 mb-4 pb-4 border-t border-gold/20">
+                  <div className="flex items-center gap-4 text-xs text-gray-500 mb-4 pb-4 border-t border-highlight/20">
                     <div className="flex items-center gap-1 mt-3">
                       <User size={14} />
                       <span>{post.author}</span>
@@ -116,7 +116,7 @@ export default function Blog() {
                   <motion.a
                     href="#"
                     whileHover={{ x: 5 }}
-                    className="inline-flex items-center gap-2 text-gold font-bold text-sm hover:gap-3 transition-all"
+                    className="inline-flex items-center gap-2 text-tertiary font-bold text-sm hover:gap-3 transition-all"
                   >
                     Read More
                     <ArrowRight size={16} />
@@ -129,7 +129,7 @@ export default function Blog() {
       </section>
 
       {/* Newsletter CTA */}
-      <section className="py-20 md:py-32 bg-deep-blue text-white">
+      <section className="py-20 md:py-32 bg-primary text-white">
         <div className="max-w-2xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -146,12 +146,12 @@ export default function Blog() {
               <input
                 type="email"
                 placeholder="Enter your email"
-                className="flex-grow px-4 py-3 rounded-lg text-deep-blue"
+                className="flex-grow px-4 py-3 rounded-lg text-primary"
               />
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="px-6 py-3 bg-gold text-deep-blue rounded-lg font-bold hover:shadow-lg transition-all"
+                className="px-6 py-3 bg-tertiary text-white rounded-lg font-bold hover:shadow-lg transition-all"
               >
                 Subscribe
               </motion.button>

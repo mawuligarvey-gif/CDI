@@ -20,7 +20,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-white text-deep-blue overflow-x-hidden">
+      <body className="bg-white text-primary overflow-x-hidden">
         <Navigation />
         <main>{children}</main>
         <Footer />

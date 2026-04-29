@@ -158,15 +158,15 @@ export default function ProgramsAdminPage() {
   return (
     <div className="min-h-screen bg-white pt-24 pb-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-3xl font-bold text-deep-blue mb-2">Programs Admin</h1>
+        <h1 className="text-3xl font-bold text-primary mb-2">Programs Admin</h1>
         <p className="text-gray-600 mb-6">Update content on the Programs page without changing code.</p>
 
         {!authenticated ? (
-          <div className="max-w-md bg-white border border-gold/30 rounded-2xl p-6 shadow-sm">
-            <h2 className="text-xl font-bold text-deep-blue mb-4">Sign In</h2>
+          <div className="max-w-md bg-white border border-accent/30 rounded-2xl p-6 shadow-sm">
+            <h2 className="text-xl font-bold text-primary mb-4">Sign In</h2>
             <form onSubmit={handleLogin} className="space-y-4">
               <div>
-                <label className="block text-sm font-semibold text-deep-blue mb-1">Admin Password</label>
+                <label className="block text-sm font-semibold text-primary mb-1">Admin Password</label>
                 <input
                   type="password"
                   value={password}
@@ -178,7 +178,7 @@ export default function ProgramsAdminPage() {
                 />
               </div>
               {error && <p className="text-sm text-red-600">{error}</p>}
-              <button type="submit" className="w-full px-4 py-2 rounded-lg bg-gold text-deep-blue font-bold">
+              <button type="submit" className="w-full px-4 py-2 rounded-lg bg-tertiary text-white font-bold">
                 Login
               </button>
             </form>
@@ -189,9 +189,9 @@ export default function ProgramsAdminPage() {
               <div>Loading programs...</div>
             ) : (
               programs.map((program, index) => (
-                <div key={program.id} className="rounded-2xl border border-gold/30 p-5 bg-gold/5">
+                <div key={program.id} className="rounded-2xl border border-accent/30 p-5 bg-highlight/5">
                   <div className="flex items-center justify-between mb-4">
-                    <h3 className="font-bold text-deep-blue">Program {index + 1}</h3>
+                    <h3 className="font-bold text-primary">Program {index + 1}</h3>
                     <button
                       type="button"
                       onClick={() => removeProgram(index)}
@@ -264,14 +264,14 @@ export default function ProgramsAdminPage() {
               <button
                 type="button"
                 onClick={addProgram}
-                className="px-4 py-2 rounded-lg border border-gold text-gold font-semibold hover:bg-gold/10"
+                className="px-4 py-2 rounded-lg border border-tertiary text-tertiary font-semibold hover:bg-tertiary/10"
               >
                 Add Program
               </button>
               <button
                 type="submit"
                 disabled={saving}
-                className="px-6 py-2 rounded-lg bg-gold text-deep-blue font-bold disabled:opacity-60"
+                className="px-6 py-2 rounded-lg bg-tertiary text-white font-bold disabled:opacity-60"
               >
                 {saving ? "Saving..." : "Save Programs"}
               </button>

@@ -144,7 +144,7 @@ export default function BlogAdminPage() {
 
   if (loadingSession) {
     return (
-      <div className="min-h-screen pt-24 bg-white flex items-center justify-center text-deep-blue">
+      <div className="min-h-screen pt-24 bg-white flex items-center justify-center text-primary">
         Loading admin portal...
       </div>
     );
@@ -158,7 +158,7 @@ export default function BlogAdminPage() {
           animate={{ opacity: 1, y: 0 }}
           className="mb-10 text-center"
         >
-          <h1 className="text-3xl sm:text-4xl font-bold text-deep-blue mb-3">
+          <h1 className="text-3xl sm:text-4xl font-bold text-primary mb-3">
             Blog Admin Portal
           </h1>
           <p className="text-gray-600">
@@ -167,18 +167,18 @@ export default function BlogAdminPage() {
         </motion.div>
 
         {!authenticated ? (
-          <div className="max-w-md mx-auto bg-white border border-gold/30 rounded-2xl p-6 shadow-sm">
-            <h2 className="text-xl font-bold text-deep-blue mb-4">Sign In</h2>
+          <div className="max-w-md mx-auto bg-white border border-accent/30 rounded-2xl p-6 shadow-sm">
+            <h2 className="text-xl font-bold text-primary mb-4">Sign In</h2>
             <form onSubmit={handleLogin} className="space-y-4">
               <div>
-                <label className="block text-sm font-semibold text-deep-blue mb-1">
+                <label className="block text-sm font-semibold text-primary mb-1">
                   Admin Password
                 </label>
                 <input
                   type="password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
-                  className="w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-gold/60"
+                  className="w-full rounded-lg border border-gray-300 px-3 py-2 focus:outline-none focus:ring-2 focus:ring-tertiary/60"
                   placeholder="Enter password"
                   required
                 />
@@ -188,7 +188,7 @@ export default function BlogAdminPage() {
 
               <button
                 type="submit"
-                className="w-full px-4 py-2 rounded-lg bg-gold text-deep-blue font-bold hover:opacity-90 transition-opacity"
+                className="w-full px-4 py-2 rounded-lg bg-tertiary text-white font-bold hover:opacity-90 transition-opacity"
               >
                 Login
               </button>
@@ -196,8 +196,8 @@ export default function BlogAdminPage() {
           </div>
         ) : (
           <div className="grid grid-cols-1 lg:grid-cols-5 gap-8">
-            <div className="lg:col-span-3 bg-white border border-gold/30 rounded-2xl p-6 shadow-sm">
-              <h2 className="text-xl font-bold text-deep-blue mb-1">Create New Post</h2>
+            <div className="lg:col-span-3 bg-white border border-accent/30 rounded-2xl p-6 shadow-sm">
+              <h2 className="text-xl font-bold text-primary mb-1">Create New Post</h2>
               <p className="text-sm text-gray-600 mb-6">
                 Fill in the fields and click publish. The post appears on your public blog page immediately.
               </p>
@@ -210,7 +210,7 @@ export default function BlogAdminPage() {
 
               <form onSubmit={handlePublish} className="space-y-4">
                 <div>
-                  <label className="block text-sm font-semibold text-deep-blue mb-1">Post Title</label>
+                  <label className="block text-sm font-semibold text-primary mb-1">Post Title</label>
                   <input
                     value={form.title}
                     onChange={(e) => setForm((f) => ({ ...f, title: e.target.value }))}
@@ -221,7 +221,7 @@ export default function BlogAdminPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-deep-blue mb-1">Short Excerpt</label>
+                  <label className="block text-sm font-semibold text-primary mb-1">Short Excerpt</label>
                   <textarea
                     value={form.excerpt}
                     onChange={(e) => setForm((f) => ({ ...f, excerpt: e.target.value }))}
@@ -233,7 +233,7 @@ export default function BlogAdminPage() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-semibold text-deep-blue mb-1">Author Name</label>
+                    <label className="block text-sm font-semibold text-primary mb-1">Author Name</label>
                     <input
                       value={form.author}
                       onChange={(e) => setForm((f) => ({ ...f, author: e.target.value }))}
@@ -243,7 +243,7 @@ export default function BlogAdminPage() {
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-semibold text-deep-blue mb-1">Category</label>
+                    <label className="block text-sm font-semibold text-primary mb-1">Category</label>
                     <select
                       value={form.category}
                       onChange={(e) => setForm((f) => ({ ...f, category: e.target.value }))}
@@ -260,7 +260,7 @@ export default function BlogAdminPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-deep-blue mb-1">
+                  <label className="block text-sm font-semibold text-primary mb-1">
                     Card Icon (emoji)
                   </label>
                   <input
@@ -272,7 +272,7 @@ export default function BlogAdminPage() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-semibold text-deep-blue mb-1">Full Post Content</label>
+                  <label className="block text-sm font-semibold text-primary mb-1">Full Post Content</label>
                   <textarea
                     value={form.content}
                     onChange={(e) => setForm((f) => ({ ...f, content: e.target.value }))}
@@ -288,7 +288,7 @@ export default function BlogAdminPage() {
                 <button
                   type="submit"
                   disabled={publishing}
-                  className="px-5 py-2.5 rounded-lg bg-gold text-deep-blue font-bold hover:opacity-90 disabled:opacity-60"
+                  className="px-5 py-2.5 rounded-lg bg-tertiary text-white font-bold hover:opacity-90 disabled:opacity-60"
                 >
                   {publishing ? "Publishing..." : "Publish Post"}
                 </button>
@@ -296,30 +296,30 @@ export default function BlogAdminPage() {
             </div>
 
             <div className="lg:col-span-2 space-y-6">
-              <div className="bg-white border border-gold/30 rounded-2xl p-6 shadow-sm">
-                <h3 className="text-lg font-bold text-deep-blue mb-3">Content Admin Links</h3>
+              <div className="bg-white border border-accent/30 rounded-2xl p-6 shadow-sm">
+                <h3 className="text-lg font-bold text-primary mb-3">Content Admin Links</h3>
                 <div className="flex flex-col gap-2 text-sm">
-                  <Link href="/admin/programs" className="text-gold hover:underline underline-offset-4">
+                  <Link href="/admin/programs" className="text-tertiary hover:underline underline-offset-4">
                     Edit Programs Page Content
                   </Link>
-                  <Link href="/admin/conference" className="text-gold hover:underline underline-offset-4">
+                  <Link href="/admin/conference" className="text-tertiary hover:underline underline-offset-4">
                     Edit Conference Page Content and Flyers
                   </Link>
-                  <Link href="/admin/settings" className="text-gold hover:underline underline-offset-4">
+                  <Link href="/admin/settings" className="text-tertiary hover:underline underline-offset-4">>
                     Open Settings
                   </Link>
                 </div>
               </div>
 
-              <div className="bg-deep-blue/5 border border-gold/20 rounded-2xl p-6">
-                <h3 className="text-lg font-bold text-deep-blue mb-4">Recent Posts</h3>
+              <div className="bg-highlight/5 border border-accent/20 rounded-2xl p-6">
+                <h3 className="text-lg font-bold text-primary mb-4">Recent Posts</h3>
                 <div className="space-y-3 max-h-[420px] overflow-auto pr-1">
                 {posts.map((post) => (
                   <div
                     key={post.id}
-                    className="rounded-lg bg-white border border-gold/20 px-3 py-2"
+                    className="rounded-lg bg-white border border-accent/20 px-3 py-2"
                   >
-                    <p className="font-semibold text-deep-blue text-sm">{post.title}</p>
+                    <p className="font-semibold text-primary text-sm">{post.title}</p>
                     <p className="text-xs text-gray-500 mt-1">
                       {post.author} • {post.date}
                     </p>

@@ -68,7 +68,7 @@ export default function NotFound() {
                 <Link key={link.name} href={link.href}>
                   <motion.span
                     whileHover={{ scale: 1.1 }}
-                    className="px-4 py-2 rounded-lg bg-gold/20 hover:bg-gold/40 transition-all cursor-pointer text-sm"
+                    className="px-4 py-2 rounded-lg bg-highlight/20 hover:bg-highlight/40 transition-all cursor-pointer text-sm"
                   >
                     {link.name}
                   </motion.span>

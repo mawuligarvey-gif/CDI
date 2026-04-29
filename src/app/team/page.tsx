@@ -69,7 +69,7 @@ export default function Team() {
   return (
     <div className="pt-20 min-h-screen bg-gradient-to-b from-white via-deep-blue/5 to-white">
       {/* Hero */}
-      <section className="bg-deep-blue text-white py-20 md:py-32">
+      <section className="bg-primary text-white py-20 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -78,7 +78,7 @@ export default function Team() {
             className="text-center"
           >
             <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6">
-              Our <span className="text-gold">Team</span>
+              Our <span className="text-highlight">Team</span>
             </h1>
             <p className="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto">
               Meet the visionary leaders shaping the future of cultural diplomacy and youth empowerment.
@@ -91,10 +91,10 @@ export default function Team() {
       <section className="py-20 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-10 text-center">
-            <p className="text-sm font-semibold uppercase tracking-[0.35em] text-gold mb-3">
+            <p className="text-sm font-semibold uppercase tracking-[0.35em] text-tertiary mb-3">
               Leadership And Team
             </p>
-            <h2 className="text-3xl md:text-4xl font-bold text-deep-blue mb-4">
+            <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
               Meet The Full CDI Team
             </h2>
             <p className="max-w-3xl mx-auto text-base md:text-lg text-gray-600">
@@ -117,13 +117,13 @@ export default function Team() {
                 className={[
                   "group overflow-hidden transition-all",
                   isLeadership
-                    ? "rounded-3xl bg-white border border-gold/40 shadow-xl md:col-span-2"
-                    : "rounded-2xl bg-white border border-gold/30 shadow-sm hover:shadow-xl hover:border-gold/60",
+                    ? "rounded-3xl bg-white border border-accent/40 shadow-xl md:col-span-2"
+                    : "rounded-2xl bg-white border border-accent/30 shadow-sm hover:shadow-xl hover:border-accent/60",
                 ].join(" ")}
               >
                 {isLeadership ? (
                   <div className="grid grid-cols-1 lg:grid-cols-2 items-stretch min-h-full">
-                    <div className="relative min-h-[420px] bg-gold/10">
+                    <div className="relative min-h-[420px] bg-highlight/10">
                       <Image
                         src={member.image}
                         alt={member.name}
@@ -135,25 +135,25 @@ export default function Team() {
                       />
                     </div>
                     <div className="p-8 lg:p-10 bg-gradient-to-br from-white to-gold/10 flex flex-col justify-center">
-                      <p className="text-sm font-semibold uppercase tracking-widest text-gold mb-3">
+                      <p className="text-sm font-semibold uppercase tracking-widest text-tertiary mb-3">
                         {i === 0 ? "Founder" : "Chairman"}
                       </p>
-                      <h3 className="text-3xl font-bold text-deep-blue mb-2">
+                      <h3 className="text-3xl font-bold text-primary mb-2">
                         <button
                           type="button"
                           onClick={() => setSelectedMember(member)}
-                          className="text-left w-full text-3xl font-bold text-deep-blue hover:text-gold cursor-pointer transition-colors"
+                          className="text-left w-full text-3xl font-bold text-primary hover:text-tertiary cursor-pointer transition-colors"
                           aria-label={`View full bio for ${member.name}`}
                         >
                           {member.name}
                         </button>
                       </h3>
-                      <p className="text-gold font-semibold mb-4">{member.role}</p>
+                      <p className="text-tertiary font-semibold mb-4">{member.role}</p>
                     </div>
                   </div>
                 ) : (
                   <>
-                    <div className="relative h-64 bg-gold/10">
+                    <div className="relative h-64 bg-highlight/10">
                       <div className="absolute inset-x-0 top-0 z-10 h-1 bg-gradient-to-r from-gold/30 via-gold to-gold/30" />
                       <Image
                         src={member.image}
@@ -167,17 +167,17 @@ export default function Team() {
                     </div>
 
                     <div className="p-6">
-                      <h3 className="text-xl font-bold text-deep-blue mb-1">
+                      <h3 className="text-xl font-bold text-primary mb-1">
                         <button
                           type="button"
                           onClick={() => setSelectedMember(member)}
-                          className="text-left w-full text-xl font-bold text-deep-blue hover:text-gold cursor-pointer transition-colors"
+                          className="text-left w-full text-xl font-bold text-primary hover:text-tertiary cursor-pointer transition-colors"
                           aria-label={`View full bio for ${member.name}`}
                         >
                           {member.name}
                         </button>
                       </h3>
-                      <p className="text-gold font-semibold text-sm mb-3">{member.role}</p>
+                      <p className="text-tertiary font-semibold text-sm mb-3">{member.role}</p>
                     </div>
                   </>
                 )}
@@ -189,15 +189,15 @@ export default function Team() {
       </section>
 
       {/* Join Team CTA */}
-      <section className="py-20 md:py-32 bg-deep-blue/5">
+      <section className="py-20 md:py-32 bg-secondary/5">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-deep-blue mb-4">
-              Join Our <span className="text-gold">Team</span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
+              Join Our <span className="text-highlight">Team</span>
             </h2>
             <p className="text-base sm:text-lg text-gray-600 mb-8">
               We are always looking for passionate creatives and leaders to join our mission.
@@ -206,7 +206,7 @@ export default function Team() {
               href="mailto:theculturaldiplomats@gmail.com"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-block px-8 py-4 bg-gold text-deep-blue rounded-lg font-bold text-lg hover:shadow-lg transition-all cursor-pointer"
+              className="inline-block px-8 py-4 bg-tertiary text-white rounded-lg font-bold text-lg hover:shadow-lg transition-all cursor-pointer"
             >
               View Career Opportunities
             </motion.a>
@@ -232,7 +232,7 @@ export default function Team() {
           >
             <div className="p-8">
               <div className="flex justify-between items-start mb-6">
-                <h3 className="text-2xl font-bold text-deep-blue">{selectedMember.name}</h3>
+                <h3 className="text-2xl font-bold text-primary">{selectedMember.name}</h3>
                 <button
                   onClick={() => setSelectedMember(null)}
                   className="text-gray-400 hover:text-gray-600 text-2xl leading-none"
@@ -241,7 +241,7 @@ export default function Team() {
                 </button>
               </div>
               <div className="flex flex-col md:flex-row gap-6">
-                <div className="relative w-full md:w-1/3 h-64 bg-gold/10 rounded-lg overflow-hidden">
+                <div className="relative w-full md:w-1/3 h-64 bg-highlight/10 rounded-lg overflow-hidden">
                   <Image
                     src={selectedMember.image}
                     alt={selectedMember.name}
@@ -252,7 +252,7 @@ export default function Team() {
                   />
                 </div>
                 <div className="flex-1">
-                  <p className="text-gold font-semibold mb-4">{selectedMember.role}</p>
+                  <p className="text-tertiary font-semibold mb-4">{selectedMember.role}</p>
                   <p className="text-gray-700 leading-relaxed">{selectedMember.bio}</p>
                 </div>
               </div>

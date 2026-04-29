@@ -60,7 +60,7 @@ export default function FAQ() {
             backgroundImage: "url('/images/gallery/worldmap.png')",
           }}
         />
-        <div className="absolute inset-0 bg-[#011C40]/70"></div>
+        <div className="absolute inset-0 bg-[#011C40]/50"></div>
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -89,13 +89,13 @@ export default function FAQ() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.05 }}
-                className="rounded-xl border-2 border-gold/30 hover:border-gold/60 overflow-hidden transition-all"
+                className="rounded-xl border-2 border-accent/30 hover:border-accent/60 overflow-hidden transition-all"
               >
                 <button
                   onClick={() => setOpenIndex(openIndex === i ? -1 : i)}
-                  className="w-full p-6 flex items-center justify-between bg-white hover:bg-gold/5 transition-colors"
+                  className="w-full p-6 flex items-center justify-between bg-white hover:bg-highlight/5 transition-colors"
                 >
-                  <h3 className="text-lg font-bold text-deep-blue text-left">
+                  <h3 className="text-lg font-bold text-primary text-left">
                     {faq.question}
                   </h3>
                   <motion.div
@@ -103,7 +103,7 @@ export default function FAQ() {
                     transition={{ duration: 0.3 }}
                     className="flex-shrink-0 ml-4"
                   >
-                    <ChevronDown size={24} className="text-gold" />
+                    <ChevronDown size={24} className="text-tertiary" />
                   </motion.div>
                 </button>
 
@@ -117,7 +117,7 @@ export default function FAQ() {
                   transition={{ duration: 0.3 }}
                   className="overflow-hidden"
                 >
-                  <div className="px-6 pb-6 text-gray-600 leading-relaxed border-t border-gold/20">
+                  <div className="px-6 pb-6 text-gray-600 leading-relaxed border-t border-accent/20">
                     {faq.answer}
                   </div>
                 </motion.div>
@@ -128,14 +128,14 @@ export default function FAQ() {
       </section>
 
       {/* Still have questions */}
-      <section className="py-20 md:py-32 bg-gold/5 border-t border-gold/30">
+      <section className="py-20 md:py-32 bg-highlight/5 border-t border-highlight/30">>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-3xl sm:text-4xl font-bold text-deep-blue mb-4">
+            <h2 className="text-3xl sm:text-4xl font-bold text-primary mb-4">
               Still Have Questions?
             </h2>
             <p className="text-base sm:text-lg text-gray-600 mb-8">
@@ -145,7 +145,7 @@ export default function FAQ() {
               href="/contact"
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="inline-block px-8 py-4 bg-gold text-deep-blue rounded-lg font-bold text-lg hover:shadow-lg transition-all cursor-pointer"
+              className="inline-block px-8 py-4 bg-tertiary text-white rounded-lg font-bold text-lg hover:shadow-lg transition-all cursor-pointer"
             >
               Contact Us
             </motion.a>

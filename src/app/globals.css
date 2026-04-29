@@ -4,6 +4,15 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Color System CSS Variables */
+:root {
+  --color-primary: #011C40;
+  --color-secondary: #023859;
+  --color-accent: #26658C;
+  --color-tertiary: #54ACBF;
+  --color-highlight: #A7EBF2;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -16,7 +25,7 @@ html {
 
 body {
   font-family: "Poppins", sans-serif;
-  background-color: #eef3f6;
+  background-color: #ffffff;
   color: #303655;
 }
 
@@ -35,12 +44,12 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #6F90AF;
+  background: #26658C;
   border-radius: 5px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #5c7b96;
+  background: #54ACBF;
 }
 
 /* Utility classes */
@@ -58,8 +67,13 @@ body {
   border: 1px solid rgba(191, 203, 206, 0.4);
 }
 
-.shadow-gold {
-  box-shadow: 0 0 30px rgba(111, 144, 175, 0.25);
+.shadow-accent {
+  box-shadow: 0 0 30px rgba(84, 172, 191, 0.25);
+}
+
+/* Text on dark backgrounds utility */
+.text-on-dark {
+  color: #ffffff;
 }
 
 /* Hero Background Image */
@@ -73,6 +87,11 @@ body {
 }
 
 .hero-bg-overlay {
-  background-color: rgba(1, 28, 64, 0.7) !important;
+  background-color: rgba(2, 56, 89, 0.75) !important;
   pointer-events: none;
+}
+
+/* Smooth transitions for all interactive elements */
+.transition-smooth {
+  transition: all 0.3s ease-out;
 }

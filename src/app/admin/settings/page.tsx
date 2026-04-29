@@ -112,7 +112,7 @@ export default function AdminSettingsPage() {
 
   if (loadingSession) {
     return (
-      <div className="min-h-screen pt-24 bg-white flex items-center justify-center text-deep-blue">
+      <div className="min-h-screen pt-24 bg-white flex items-center justify-center text-primary">
         Loading settings...
       </div>
     );
@@ -121,15 +121,15 @@ export default function AdminSettingsPage() {
   return (
     <div className="min-h-screen pt-24 pb-16 bg-white">
       <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h1 className="text-3xl font-bold text-deep-blue mb-2">Admin Settings</h1>
+        <h1 className="text-3xl font-bold text-primary mb-2">Admin Settings</h1>
         <p className="text-gray-600 mb-6">Change your admin password from one dedicated place.</p>
 
         {!authenticated ? (
-          <div className="max-w-md bg-white border border-gold/30 rounded-2xl p-6 shadow-sm">
-            <h2 className="text-xl font-bold text-deep-blue mb-4">Sign In</h2>
+          <div className="max-w-md bg-white border border-accent/30 rounded-2xl p-6 shadow-sm">
+            <h2 className="text-xl font-bold text-primary mb-4">Sign In</h2>
             <form onSubmit={handleLogin} className="space-y-4">
               <div>
-                <label className="block text-sm font-semibold text-deep-blue mb-1">Admin Password</label>
+                <label className="block text-sm font-semibold text-primary mb-1">Admin Password</label>
                 <input
                   type="password"
                   value={password}
@@ -143,13 +143,13 @@ export default function AdminSettingsPage() {
 
               {error && <p className="text-sm text-red-600">{error}</p>}
 
-              <button type="submit" className="w-full px-4 py-2 rounded-lg bg-gold text-deep-blue font-bold">
+              <button type="submit" className="w-full px-4 py-2 rounded-lg bg-tertiary text-white font-bold">
                 Login
               </button>
             </form>
           </div>
         ) : (
-          <div className="bg-white border border-gold/30 rounded-2xl p-6 shadow-sm">
+          <div className="bg-white border border-accent/30 rounded-2xl p-6 shadow-sm">
             {usingDefaultPassword && (
               <div className="mb-4 rounded-lg border border-amber-300 bg-amber-50 px-3 py-2 text-sm text-amber-900">
                 Security note: You are using the default admin password.
@@ -158,7 +158,7 @@ export default function AdminSettingsPage() {
 
             <form onSubmit={handlePasswordChange} className="space-y-4">
               <div>
-                <label className="block text-sm font-semibold text-deep-blue mb-1">Current Password</label>
+                <label className="block text-sm font-semibold text-primary mb-1">Current Password</label>
                 <input
                   type="password"
                   value={currentPassword}
@@ -171,7 +171,7 @@ export default function AdminSettingsPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-deep-blue mb-1">New Password</label>
+                <label className="block text-sm font-semibold text-primary mb-1">New Password</label>
                 <input
                   type="password"
                   value={newPassword}
@@ -185,7 +185,7 @@ export default function AdminSettingsPage() {
               </div>
 
               <div>
-                <label className="block text-sm font-semibold text-deep-blue mb-1">Confirm New Password</label>
+                <label className="block text-sm font-semibold text-primary mb-1">Confirm New Password</label>
                 <input
                   type="password"
                   value={confirmPassword}
@@ -204,7 +204,7 @@ export default function AdminSettingsPage() {
               <button
                 type="submit"
                 disabled={saving}
-                className="w-full px-4 py-2 rounded-lg bg-deep-blue text-white font-semibold disabled:opacity-60"
+                className="w-full px-4 py-2 rounded-lg bg-primary text-white font-semibold disabled:opacity-60"
               >
                 {saving ? "Updating..." : "Update Password"}
               </button>
@@ -213,7 +213,7 @@ export default function AdminSettingsPage() {
         )}
 
         <div className="mt-6">
-          <Link href="/admin" className="text-gold font-semibold hover:underline underline-offset-4">
+          <Link href="/admin" className="text-tertiary font-semibold hover:underline underline-offset-4">
             Back to Admin Portal
           </Link>
         </div>

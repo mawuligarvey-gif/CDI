@@ -134,7 +134,7 @@ export default function AdminPortalPage() {
 
   if (loadingSession) {
     return (
-      <div className="min-h-screen pt-24 bg-white flex items-center justify-center text-deep-blue">
+      <div className="min-h-screen pt-24 bg-white flex items-center justify-center text-primary">
         Loading admin portal...
       </div>
     );
@@ -155,9 +155,9 @@ export default function AdminPortalPage() {
             <motion.div
               initial={{ opacity: 0, y: 14 }}
               animate={{ opacity: 1, y: 0 }}
-              className="rounded-3xl bg-white border border-gold/30 shadow-lg overflow-hidden"
+              className="rounded-3xl bg-white border border-accent/30 shadow-lg overflow-hidden"
             >
-              <div className="bg-deep-blue text-white px-5 py-6 sm:p-7 text-center">
+              <div className="bg-primary text-white px-5 py-6 sm:p-7 text-center">
                 <h1 className="text-xl sm:text-2xl font-bold">CDI Admin Portal</h1>
                 <p className="text-xs sm:text-sm text-gray-200 mt-1 px-1">
                   One secure link for Blog, Programs, and Conference management.
@@ -173,7 +173,7 @@ export default function AdminPortalPage() {
 
                 <form onSubmit={handleLogin} className="space-y-4">
                   <div>
-                    <label className="block text-sm font-semibold text-deep-blue mb-1">Admin Password</label>
+                    <label className="block text-sm font-semibold text-primary mb-1">Admin Password</label>
                     <input
                       type="password"
                       value={password}
@@ -189,17 +189,17 @@ export default function AdminPortalPage() {
 
                   <button
                     type="submit"
-                    className="w-full px-4 py-2.5 rounded-lg bg-gold text-deep-blue font-bold hover:opacity-90 transition-opacity"
+                    className="w-full px-4 py-2.5 rounded-lg bg-tertiary text-white font-bold hover:opacity-90 transition-opacity"
                   >
                     Sign In
                   </button>
                 </form>
 
-                <div className="border-t border-gold/20 pt-4">
+                <div className="border-t border-accent/20 pt-4">
                   <button
                     type="button"
                     onClick={() => setShowReset((current) => !current)}
-                    className="w-full sm:w-auto text-left text-sm font-semibold text-gold hover:underline"
+                    className="w-full sm:w-auto text-left text-sm font-semibold text-tertiary hover:underline"
                   >
                     Forgot password? Reset with recovery key
                   </button>
@@ -242,7 +242,7 @@ export default function AdminPortalPage() {
                       <button
                         type="submit"
                         disabled={resetting}
-                        className="w-full px-4 py-2 rounded-lg bg-deep-blue text-white font-semibold disabled:opacity-60"
+                        className="w-full px-4 py-2 rounded-lg bg-primary text-white font-semibold disabled:opacity-60"
                       >
                         {resetting ? "Resetting..." : "Reset Password"}
                       </button>
@@ -255,7 +255,7 @@ export default function AdminPortalPage() {
         ) : (
           <div>
             <div className="mb-6 sm:mb-8 text-center">
-              <h1 className="text-3xl sm:text-4xl font-bold text-deep-blue mb-2">Admin Portal</h1>
+              <h1 className="text-3xl sm:text-4xl font-bold text-primary mb-2">Admin Portal</h1>
               <p className="text-sm sm:text-base text-gray-600">Choose what you want to manage.</p>
             </div>
 
@@ -266,13 +266,13 @@ export default function AdminPortalPage() {
                   initial={{ opacity: 0, y: 16 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: index * 0.1 }}
-                  className="rounded-2xl border border-gold/30 bg-white p-5 sm:p-6 shadow-sm flex flex-col"
+                  className="rounded-2xl border border-accent/30 bg-white p-5 sm:p-6 shadow-sm flex flex-col"
                 >
-                  <h2 className="text-lg sm:text-xl font-bold text-deep-blue mb-2">{section.title}</h2>
+                  <h2 className="text-lg sm:text-xl font-bold text-primary mb-2">{section.title}</h2>
                   <p className="text-sm text-gray-600 mb-5 flex-grow">{section.description}</p>
                   <Link
                     href={section.href}
-                    className="inline-flex w-full justify-center px-4 py-2 rounded-lg bg-gold text-deep-blue font-bold hover:opacity-90"
+                    className="inline-flex w-full justify-center px-4 py-2 rounded-lg bg-tertiary text-white font-bold hover:opacity-90"
                   >
                     Open Section
                   </Link>

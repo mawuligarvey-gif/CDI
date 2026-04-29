@@ -86,7 +86,7 @@ export default function Contact() {
   />
 
   {/* Overlay */}
-  <div className="absolute inset-0 bg-[#011C40]/70"></div>
+  <div className="absolute inset-0 bg-[#011C40]/50"></div>
 
   {/* Content */}
   <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -97,7 +97,7 @@ export default function Contact() {
       className="text-center"
     >
       <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 drop-shadow-lg">
-        Get in <span className="text-gold">Touch</span>
+        Get in <span className="text-highlight">Touch</span>
       </h1>
       <p className="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto">
         Have questions about our programs? Want to partner with us? We'd love to hear from you!
@@ -122,13 +122,13 @@ export default function Contact() {
                   viewport={{ once: true }}
                   transition={{ delay: i * 0.1 }}
                   whileHover={{ y: -10 }}
-                  className="p-8 rounded-2xl bg-gradient-to-br from-gold/10 to-deep-blue/10 border border-gold/30 hover:border-gold/60 transition-all cursor-pointer"
+                  className="p-8 rounded-2xl bg-gradient-to-br from-highlight/10 to-secondary/10 border border-accent/30 hover:border-accent/60 transition-all cursor-pointer"
                 >
-                  <div className="w-14 h-14 bg-gold/20 rounded-xl flex items-center justify-center mb-4">
-                    <Icon className="text-gold" size={28} />
+                  <div className="w-14 h-14 bg-highlight/20 rounded-xl flex items-center justify-center mb-4">
+                    <Icon className="text-tertiary" size={28} />
                   </div>
-                  <h3 className="font-bold text-deep-blue mb-2">{info.label}</h3>
-                  <p className="text-gray-600 hover:text-gold transition-colors">
+                  <h3 className="font-bold text-primary mb-2">{info.label}</h3>
+                  <p className="text-gray-600 hover:text-tertiary transition-colors">
                     {info.value}
                   </p>
                 </motion.a>
@@ -145,11 +145,11 @@ export default function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-2xl sm:text-3xl font-bold text-deep-blue mb-8">Send us a Message</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-primary mb-8">Send us a Message</h2>
 
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label className="block text-sm font-bold text-deep-blue mb-2">
+                  <label className="block text-sm font-bold text-primary mb-2">
                     Name *
                   </label>
                   <input
@@ -159,12 +159,12 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     placeholder="Your name"
-                    className="w-full px-4 py-3 rounded-lg border border-gold/30 focus:border-gold focus:outline-none transition-colors bg-white"
+                    className="w-full px-4 py-3 rounded-lg border border-accent/30 focus:border-tertiary focus:outline-none transition-colors bg-white"
                   />
                 </div>
 
                 <div>
-                  <label className="block text-sm font-bold text-deep-blue mb-2">
+                  <label className="block text-sm font-bold text-primary mb-2">
                     Email *
                   </label>
                   <input
@@ -174,7 +174,7 @@ export default function Contact() {
                     onChange={handleChange}
                     required
                     placeholder="your@email.com"
-                    className="w-full px-4 py-3 rounded-lg border border-gold/30 focus:border-gold focus:outline-none transition-colors bg-white"
+                    className="w-full px-4 py-3 rounded-lg border border-accent/30 focus:border-tertiary focus:outline-none transition-colors bg-white"
                   />
                 </div>
 
@@ -183,7 +183,7 @@ export default function Contact() {
                 </div>
 
                 <div>
-                  <label className="block text-sm font-bold text-deep-blue mb-2">
+                  <label className="block text-sm font-bold text-primary mb-2">
                     Message *
                   </label>
                   <textarea
@@ -193,7 +193,7 @@ export default function Contact() {
                     required
                     placeholder="Tell us more..."
                     rows={5}
-                    className="w-full px-4 py-3 rounded-lg border border-gold/30 focus:border-gold focus:outline-none transition-colors bg-white resize-none"
+                    className="w-full px-4 py-3 rounded-lg border border-accent/30 focus:border-tertiary focus:outline-none transition-colors bg-white resize-none"
                   ></textarea>
                 </div>
 
@@ -202,11 +202,11 @@ export default function Contact() {
                   whileTap={{ scale: loading ? 1 : 0.95 }}
                   type="submit"
                   disabled={loading}
-                  className="w-full px-8 py-4 bg-gold text-deep-blue rounded-lg font-bold hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                  className="w-full px-8 py-4 bg-tertiary text-white rounded-lg font-bold hover:shadow-lg transition-all disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center gap-2"
                 >
                   {loading ? (
                     <>
-                      <div className="w-5 h-5 border-2 border-deep-blue border-t-transparent rounded-full animate-spin"></div>
+                      <div className="w-5 h-5 border-2 border-white border-t-transparent rounded-full animate-spin"></div>
                       Sending...
                     </>
                   ) : (
@@ -237,7 +237,7 @@ export default function Contact() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-2xl sm:text-3xl font-bold text-deep-blue mb-8">Connect With Us</h2>
+              <h2 className="text-2xl sm:text-3xl font-bold text-primary mb-8">Connect With Us</h2>
 
               <div className="space-y-6">
                 {[
@@ -263,13 +263,13 @@ export default function Contact() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
-                    className="p-6 rounded-xl bg-gold/5 border border-gold/30"
+                    className="p-6 rounded-xl bg-highlight/5 border border-accent/30"
                   >
-                    <h3 className="font-bold text-deep-blue mb-2">{item.title}</h3>
+                    <h3 className="font-bold text-primary mb-2">{item.title}</h3>
                     <p className="text-gray-600 text-sm mb-3">{item.desc}</p>
                     <a
                       href={`mailto:${item.email}`}
-                      className="text-gold font-bold text-sm hover:underline"
+                      className="text-tertiary font-bold text-sm hover:underline"
                     >
                       {item.email} →
                     </a>
@@ -283,9 +283,9 @@ export default function Contact() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: 0.4 }}
-                className="mt-12 p-6 rounded-xl bg-deep-blue/5 border border-deep-blue/30"
+                className="mt-12 p-6 rounded-xl bg-secondary/5 border border-secondary/30"
               >
-                <h3 className="font-bold text-deep-blue mb-4">Office Hours</h3>
+                <h3 className="font-bold text-primary mb-4">Office Hours</h3>
                 <div className="space-y-2 text-gray-600 text-sm">
                   <p>Monday - Friday: 9:00 AM - 5:00 PM GMT</p>
                   <p>Saturday: 10:00 AM - 2:00 PM GMT</p>
