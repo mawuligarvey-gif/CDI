@@ -215,7 +215,7 @@ export default function Apply() {
                   <input
                     type="email"
                     name="email"
-                    value={form.email}
+                    value={formData.email}
                     onChange={handleChange}
                     required
                     placeholder="your@email.com"

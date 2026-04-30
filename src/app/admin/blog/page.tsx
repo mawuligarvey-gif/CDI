@@ -305,7 +305,7 @@ export default function BlogAdminPage() {
                   <Link href="/admin/conference" className="text-tertiary hover:underline underline-offset-4">
                     Edit Conference Page Content and Flyers
                   </Link>
-                  <Link href="/admin/settings" className="text-tertiary hover:underline underline-offset-4">>
+                  <Link href="/admin/settings" className="text-tertiary hover:underline underline-offset-4">
                     Open Settings
                   </Link>
                 </div>

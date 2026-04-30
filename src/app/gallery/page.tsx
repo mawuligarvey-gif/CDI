@@ -173,7 +173,7 @@ export default function Gallery() {
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
-            <div className="flex items-center justify-between p-4 border-b border-accent/20">>
+            <div className="flex items-center justify-between p-4 border-b border-accent/20">
               <div className="flex gap-2">
                 <button
                   onClick={() => setZoom(Math.max(1, zoom - 0.2))}
